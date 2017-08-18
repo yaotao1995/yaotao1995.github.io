@@ -8,16 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>使用RumTime机制简单视线数据归解档 | July的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人笔记 就是懒，不想每次有新数据添加的时候，都要进行归档解档操作">
+  <meta name="description" content="【笔记】  就是懒，不想每次有新数据添加的时候，都要进行归档解档操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用RumTime机制简单视线数据归解档">
 <meta property="og:url" content="http://yoursite.com/2017/08/16/使用RumTime机制简单视线数据归解档/index.html">
 <meta property="og:site_name" content="July的Blog">
-<meta property="og:description" content="个人笔记 就是懒，不想每次有新数据添加的时候，都要进行归档解档操作">
-<meta property="og:updated_time" content="2017-08-16T02:23:00.000Z">
+<meta property="og:description" content="【笔记】  就是懒，不想每次有新数据添加的时候，都要进行归档解档操作">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/text.jpeg">
+<meta property="og:updated_time" content="2017-08-18T04:21:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用RumTime机制简单视线数据归解档">
-<meta name="twitter:description" content="个人笔记 就是懒，不想每次有新数据添加的时候，都要进行归档解档操作">
+<meta name="twitter:description" content="【笔记】  就是懒，不想每次有新数据添加的时候，都要进行归档解档操作">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/text.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="July的Blog" type="application/atom+xml">
   
@@ -169,46 +171,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>个人笔记</p>
-<p>就是懒，不想每次有新数据添加的时候，都要进行归档解档操作</p>
+        <p><strong>【笔记】</strong></p>
+<ul>
+<li>就是懒，不想每次有新数据添加的时候，都要进行归档解档操作</li>
+</ul>
+<hr>
+<p><img src="/assets/blogImg/text.jpeg" alt="图片">     </p>
 <a id="more"></a>
-<p>//归档</p>
+<p><strong>【归档】</strong></p>
 <ul>
 <li>(void)encodeWithCoder:(NSCoder*)coder{</li>
 </ul>
 <p>unsignedintcount =0;</p>
-<p>//使用class_copyIvarList 获取到 UserInfo 类里面的属性，（.h文件和.m文件里面的都能得到）</p>
-<p>Ivar* ivars =class_copyIvarList([UserInfo class], &amp;count);</p>
-<p>//遍历数量</p>
-<p>for(inti =0; i &lt; count; i++) {</p>
-<p>//取出对应的Ivar</p>
-<p>Ivarivar = ivars[i];</p>
-<p>//拿到名称</p>
-<p>constchar* name =ivar_getName(ivar);</p>
-<p>//OC字符串</p>
-<p>NSString* key = [NSStringstringWithUTF8String:name];</p>
-<p>//归档</p>
-<p>[coderencodeObject:[selfvalueForKey:key]forKey:key];}}</p>
+<p>//使用class_copyIvarList 获取到 UserInfo 类里面的属性，（.h文件和.m文件里面的都能得到）<br>Ivar* ivars =class_copyIvarList([UserInfo class], &amp;count);</p>
+<p>//遍历数量<br>for(inti =0; i &lt; count; i++) {</p>
+<p>//取出对应的Ivar<br>Ivarivar = ivars[i];</p>
+<p>//拿到名称<br>constchar* name =ivar_getName(ivar);</p>
+<p>//OC字符串<br>NSString* key = [NSStringstringWithUTF8String:name];</p>
+<p>//归档<br>[coderencodeObject:[selfvalueForKey:key]forKey:key];}}</p>
 <p>//解档 跟上面的是一个意思</p>
 <ul>
 <li>(instancetype)initWithCoder:(NSCoder*)coder</li>
 </ul>
-<p>{</p>
-<p>if(self= [superinit]) {</p>
-<p>//属性的个数</p>
-<p>unsignedintcount =0;</p>
+<p>{<br>if(self= [superinit]) {</p>
+<p>//属性的个数<br>unsignedintcount =0;</p>
 <p>Ivar* ivars =class_copyIvarList([UserInfoclass], &amp;count);</p>
 <p>for(inti =0; i &lt; count; i++) {</p>
-<p>//取出对应的Ivar</p>
-<p>Ivarivar = ivars[i];</p>
-<p>//拿到名称</p>
-<p>constchar* name =ivar_getName(ivar);</p>
-<p>//OC字符串</p>
-<p>NSString* key = [NSString stringWithUTF8String:name];</p>
-<p>//解档</p>
+<p>//取出对应的Ivar<br>Ivarivar = ivars[i];</p>
+<p>//拿到名称<br>constchar* name =ivar_getName(ivar);</p>
+<p>//OC字符串<br>NSString* key = [NSString stringWithUTF8String:name];</p>
+<p><strong>【解档】</strong></p>
 <p>idvalue = [coder  decodeObjectForKey:key];</p>
-<p>//KVC–设置值到属性上面!!!</p>
-<p>[self setValue:value forKey:key];</p>
+<p>//KVC–设置值到属性上面!!!<br>[self setValue:value forKey:key];</p>
 <p>}}</p>
 <p>returnself;</p>
 <p>}</p>
@@ -217,11 +211,9 @@
 <p>*/</p>
 <p>-(void)saveUserInfo</p>
 <p>{</p>
-<p>//沙盒</p>
-<p>NSString* temp =NSTemporaryDirectory();</p>
+<p>//沙盒<br>NSString* temp =NSTemporaryDirectory();</p>
 <p>NSString* filePath = [temp stringByAppendingPathComponent:@”userInfo.yt”];</p>
-<p>//归档</p>
-<p>[NSKeyedArchiver archiveRootObject:self toFile:filePath];</p>
+<p>//归档<br>[NSKeyedArchiver archiveRootObject:self toFile:filePath];</p>
 <p>}</p>
 <p>//至于用户退出 清空数据  同样是遍历 只不过将value设置为空就好了</p>
 
