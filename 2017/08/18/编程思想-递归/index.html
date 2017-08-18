@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | July的Blog</title>
+  <title>递归 | July的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="July的Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="个人笔记    今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归">
+<meta property="og:url" content="http://yoursite.com/2017/08/18/编程思想-递归/index.html">
 <meta property="og:site_name" content="July的Blog">
+<meta property="og:description" content="个人笔记    今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念">
+<meta property="og:updated_time" content="2017-08-18T03:41:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="July的Blog">
+<meta name="twitter:title" content="递归">
+<meta name="twitter:description" content="个人笔记    今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念">
   
     <link rel="alternative" href="/atom.xml" title="July的Blog" type="application/atom+xml">
   
@@ -145,103 +149,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-编程思想-递归" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      递归
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/18/编程思想-递归/" class="archive-article-date">
+
+        
+        <a href="/2017/08/18/编程思想-递归/" class="archive-article-date">
   	<time datetime="2017-08-18T03:28:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/18/编程思想-递归/">递归</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>个人笔记<br>    今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念</p>
+<a id="more"></a>
+<p>什么叫递归？<br>    直接搬网上一个比较有意思的例子更加容易理解</p>
+<pre><code>例1:
+有一个8俩重的苹果要你切成重量相等的若干份，每一份的重量不能大于1俩。你肯定会想到这样做：
+1.第一刀先把一个苹果切成重量均等的2份A1和A2；
+2.再把其中的一份A1切成重量均等的两份A11和A12， 把A2切成均等的两份A21和A22；
+3.把A11切成均等的两份……
+4.直到每一小份都小于等于1俩为止。
+以上的例子就是递归一个模型，把一个大的事物化成若干个小的事物，每一次使用的方法都相同。
 
-        <div class="article-info info-on-right">
-          
-          
+例2:
+从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？“从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？‘从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？……’”
 
+比较专业的解释：
+    维基百科：递归（英语：Recursion），又译为递回，在数学与计算机科学中，是指在函数的定义中使用函数自身的方法
+    维基百科正式定义：在数学和计算机科学中，递归指由一种（或多种）简单的基本情况定义的一类对象或方法，并规定其他所有情况都能被还原为其基本情况。
+</code></pre><p>递归的特性</p>
+<pre><code>递归必须有一个明确的结束条件，不然回想上面例2一样出现无限循环
+每一次执行应当更加接近我们的结束条件
+深层次的递归可能导致栈溢出
+
+暂时就想到这么多～至于代码，这样的代码搜索引擎更加专业～等有空在写下具体代码
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/18/编程思想-递归/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/16/使用RumTime机制简单视线数据归解档/" class="archive-article-date">
-  	<time datetime="2017-08-16T01:36:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/16/使用RumTime机制简单视线数据归解档/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用RumTime机制简单视线数据归解档</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/16/使用RumTime机制简单视线数据归解档/">使用RumTime机制简单视线数据归解档</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/15/hello-world/" class="archive-article-date">
-  	<time datetime="2017-08-15T03:20:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/15/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -264,8 +320,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
