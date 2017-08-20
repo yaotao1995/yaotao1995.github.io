@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | July的Blog</title>
+  <title>基本算法 | July的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="July的Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="【数据结构与算法】  基本算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本算法">
+<meta property="og:url" content="http://yoursite.com/2017/08/18/基本算法/index.html">
 <meta property="og:site_name" content="July的Blog">
+<meta property="og:description" content="【数据结构与算法】  基本算法">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
+<meta property="og:updated_time" content="2017-08-20T05:38:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="July的Blog">
+<meta name="twitter:title" content="基本算法">
+<meta name="twitter:description" content="【数据结构与算法】  基本算法">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="July的Blog" type="application/atom+xml">
   
@@ -145,103 +151,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-基本算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      基本算法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/18/基本算法/" class="archive-article-date">
+
+        
+        <a href="/2017/08/18/基本算法/" class="archive-article-date">
   	<time datetime="2017-08-18T03:28:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/18/基本算法/">基本算法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>【数据结构与算法】</strong></p>
+<ul>
+<li>基本算法</li>
+</ul>
+<hr>
+<p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
+<a id="more"></a>
+<p><strong>【希尔排序】</strong><br>    又叫递减增量排序算法<br>    主要概念：步长 = N（总数）／2。<br>    假设有一个总数为10的数据。 步长就为10/2 = 5，<br>    第一次排序的时候将相隔5的两个数对比调整<br>    第二次排序获取 5/2 = 2 步长  两两对换，直到步长为1</p>
+<p><strong>【快速排序】</strong></p>
+<pre><code>快排的基本思想：1.找到一个基数，2.将全部小于这个基数的往前丢，大的往后，3.将得到的两个子集不断重复前面
+1，2两步操作  直到子集的大小为1的时候结束
 
-        <div class="article-info info-on-right">
-          
-          
 
+storeIndex：通俗的理解就是往前丢的数据有几个了
+
+首先，把基准元素移到結尾（如果直接选择最后一个元素为基准元素，那就不用移动），然后从左到右（除了最后的基准元素），循环移动小于等于基准元素的元素到数组的开头，每次移动 storeIndex 自增 1，表示下一个小于基准元素将要移动到的位置。循环结束后 storeIndex 所代表的的位置就是基准元素的所有摆放的位置。所以最后将基准元素所在位置（这里是 right）与 storeIndex 所代表的的位置的元素交换位置。要注意的是，一个元素在到达它的最后位置前，可能会被交换很多次。
+</code></pre><p><strong>【冒泡排序】</strong><br>一个N个数据的数组<br>比较相邻两个数据  一直往后比较。<br>第一次排序N次完成就将最大的数据排到最后<br>下一次排序N-1次 将于下的最大数排后<br>直至完成</p>
+<p>冒泡排序是比较简单的排序法，通过走访每一个数据。每一次排序将大的数据往后直到整个数据排序完成</p>
+<p>例；<br>原始待排序数组| 6 | 2 | 4 | 1 | 5 | 9 |<br>第一趟排序(外循环)<br>第一次两两比较6 &gt; 2交换(内循环)<br>交换前状态| 6 | 2 | 4 | 1 | 5 | 9 |<br>交换后状态| 2 | 6 | 4 | 1 | 5 | 9 |<br>第二次两两比较,6 &gt; 4交换<br>交换前状态| 2 | 6 | 4 | 1 | 5 | 9 |<br>交换后状态| 2 | 4 | 6 | 1 | 5 | 9 |<br>第三次两两比较,6 &gt; 1交换<br>交换前状态| 2 | 4 | 6 | 1 | 5 | 9 |<br>交换后状态| 2 | 4 | 1 | 6 | 5 | 9 |<br>第四次两两比较,6 &gt; 5交换<br>交换前状态| 2 | 4 | 1 | 6 | 5 | 9 |<br>交换后状态| 2 | 4 | 1 | 5 | 6 | 9 |<br>第五次两两比较,6 &lt; 9不交换<br>交换前状态| 2 | 4 | 1 | 5 | 6 | 9 |<br>交换后状态| 2 | 4 | 1 | 5 | 6 | 9 |<br>第二趟排序(外循环)<br>第一次两两比较2 &lt; 4不交换<br>交换前状态| 2 | 4 | 1 | 5 | 6 | 9 |<br>交换后状态| 2 | 4 | 1 | 5 | 6 | 9 |<br>第二次两两比较,4 &gt; 1交换<br>交换前状态| 2 | 4 | 1 | 5 | 6 | 9 |<br>交换后状态| 2 | 1 | 4 | 5 | 6 | 9 |<br>第三次两两比较,4 &lt; 5不交换<br>交换前状态| 2 | 1 | 4 | 5 | 6 | 9 |<br>交换后状态| 2 | 1 | 4 | 5 | 6 | 9 |<br>第四次两两比较,5 &lt; 6不交换<br>交换前状态| 2 | 1 | 4 | 5 | 6 | 9 |<br>交换后状态| 2 | 1 | 4 | 5 | 6 | 9 |<br>第三趟排序(外循环)<br>第一次两两比较2 &gt; 1交换<br>交换后状态| 2 | 1 | 4 | 5 | 6 | 9 |<br>交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |<br>第二次两两比较,2 &lt; 4不交换<br>交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |<br>交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |<br>第三次两两比较,4 &lt; 5不交换<br>交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |<br>交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |<br>第四趟排序(外循环)无交换<br>第五趟排序(外循环)无交换<br>排序完毕,输出最终结果1 2 4 5 6 9</p>
+<p><strong>【插入排序】</strong></p>
+<p>时间复杂度：O（n^2)<br>空间复杂度：O（1）</p>
+<p>将数据插入到排数组的合适位置</p>
+<p>5 4 8 3 9 6<br>第一趟。取第一个数 5还是放在第一个位置                          得到：5 4 8 3 9 6<br>第二趟。区第二个数4 和前面的数比较。 比5小。 放前面    得到：4 5 8 3 9 6<br>第三趟。 取第三个数8比较 ，放在5后面，即位置不动        得到：4 5 8 3 9 6<br>第四趟。 取第四个数3比较，比8小，比5小，比4小。        得到：3 4 5 8 9 6<br>·······                                                                                        得到：3 4 5 8 9 6<br>·······                                                                                        得到：3 4 5 6 8 9</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/18/基本算法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/18/编程思想-递归/" class="archive-article-date">
-  	<time datetime="2017-08-18T03:28:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/18/编程思想-递归/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">递归</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/18/编程思想-递归/">递归</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/16/使用RumTime机制简单视线数据归解档/" class="archive-article-date">
-  	<time datetime="2017-08-16T01:36:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/16/使用RumTime机制简单视线数据归解档/">使用RumTime机制简单实现数据归解档</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -264,8 +322,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
