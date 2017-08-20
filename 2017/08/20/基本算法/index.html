@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>递归 | July的Blog</title>
+  <title>基本算法 | July的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="【数据结构与算法】  今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念">
+  <meta name="description" content="【数据结构与算法】  简单的算法还是挺重要的，对于萌新来讲，最近的就是面试的时候就会用到·····">
 <meta property="og:type" content="article">
-<meta property="og:title" content="递归">
-<meta property="og:url" content="http://yoursite.com/2017/08/18/编程思想-递归/index.html">
+<meta property="og:title" content="基本算法">
+<meta property="og:url" content="http://yoursite.com/2017/08/20/基本算法/index.html">
 <meta property="og:site_name" content="July的Blog">
-<meta property="og:description" content="【数据结构与算法】  今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念">
+<meta property="og:description" content="【数据结构与算法】  简单的算法还是挺重要的，对于萌新来讲，最近的就是面试的时候就会用到·····">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
-<meta property="og:updated_time" content="2017-08-18T08:56:29.000Z">
+<meta property="og:updated_time" content="2017-08-20T05:51:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="递归">
-<meta name="twitter:description" content="【数据结构与算法】  今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念">
+<meta name="twitter:title" content="基本算法">
+<meta name="twitter:description" content="【数据结构与算法】  简单的算法还是挺重要的，对于萌新来讲，最近的就是面试的时候就会用到·····">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="July的Blog" type="application/atom+xml">
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-编程思想-递归" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-基本算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      递归
+      基本算法
     </h1>
   
 
         
-        <a href="/2017/08/18/编程思想-递归/" class="archive-article-date">
-  	<time datetime="2017-08-18T03:28:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
+        <a href="/2017/08/20/基本算法/" class="archive-article-date">
+  	<time datetime="2017-08-20T03:47:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
 </a>
         
       </header>
@@ -173,34 +173,80 @@
       
         <p><strong>【数据结构与算法】</strong></p>
 <ul>
-<li>今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念</li>
+<li>简单的算法还是挺重要的，对于萌新来讲，最近的就是面试的时候就会用到·····</li>
 </ul>
 <hr>
 <p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
 <a id="more"></a>
-<p><strong>【什么叫递归？】</strong></p>
-<pre><code>直接搬网上一个比较有意思的例子更加容易理解
+<p><strong>【希尔排序】</strong><br>    又叫递减增量排序算法<br>    主要概念：步长 = N（总数）／2。<br>    假设有一个总数为10的数据。 步长就为10/2 = 5，<br>    第一次排序的时候将相隔5的两个数对比调整<br>    第二次排序获取 5/2 = 2 步长  两两对换，直到步长为1</p>
+<p><strong>【快速排序】</strong></p>
+<pre><code>快排的基本思想：1.找到一个基数，2.将全部小于这个基数的往前丢，大的往后，3.将得到的两个子集不断重复前面
+1，2两步操作  直到子集的大小为1的时候结束
 
-例1:
-有一个8俩重的苹果要你切成重量相等的若干份，每一份的重量不能大于1俩。你肯定会想到这样做：
-1.第一刀先把一个苹果切成重量均等的2份A1和A2；
-2.再把其中的一份A1切成重量均等的两份A11和A12， 把A2切成均等的两份A21和A22；
-3.把A11切成均等的两份……
-4.直到每一小份都小于等于1俩为止。
-以上的例子就是递归一个模型，把一个大的事物化成若干个小的事物，每一次使用的方法都相同。
 
-例2:
-从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？“从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？‘从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？……’”
+storeIndex：通俗的理解就是往前丢的数据有几个了
 
-比较专业的解释：
-    维基百科：递归（英语：Recursion），又译为递回，在数学与计算机科学中，是指在函数的定义中使用函数自身的方法
-    维基百科正式定义：在数学和计算机科学中，递归指由一种（或多种）简单的基本情况定义的一类对象或方法，并规定其他所有情况都能被还原为其基本情况。
-</code></pre><p><strong>【递归的特性】</strong></p>
-<pre><code>递归必须有一个明确的结束条件，不然回想上面例2一样出现无限循环
-每一次执行应当更加接近我们的结束条件
-深层次的递归可能导致栈溢出
+首先，把基准元素移到結尾（如果直接选择最后一个元素为基准元素，那就不用移动），然后从左到右（除了最后的基准元素），循环移动小于等于基准元素的元素到数组的开头，每次移动 storeIndex 自增 1，表示下一个小于基准元素将要移动到的位置。循环结束后 storeIndex 所代表的的位置就是基准元素的所有摆放的位置。所以最后将基准元素所在位置（这里是 right）与 storeIndex 所代表的的位置的元素交换位置。要注意的是，一个元素在到达它的最后位置前，可能会被交换很多次。
+</code></pre><p><strong>【冒泡排序】</strong><br>    一个N个数据的数组<br>    比较相邻两个数据  一直往后比较。<br>    第一次排序N次完成就将最大的数据排到最后<br>    下一次排序N-1次 将于下的最大数排后<br>    直至完成</p>
+<pre><code>冒泡排序是比较简单的排序法，通过走访每一个数据。每一次排序将大的数据往后直到整个数据排序完成
 
-暂时就想到这么多～至于代码，这样的代码搜索引擎更加专业～等有空在写下具体代码
+例；
+原始待排序数组| 6 | 2 | 4 | 1 | 5 | 9 |
+第一趟排序(外循环)
+第一次两两比较6 &gt; 2交换(内循环)
+交换前状态| 6 | 2 | 4 | 1 | 5 | 9 |
+交换后状态| 2 | 6 | 4 | 1 | 5 | 9 |
+第二次两两比较,6 &gt; 4交换
+交换前状态| 2 | 6 | 4 | 1 | 5 | 9 |
+交换后状态| 2 | 4 | 6 | 1 | 5 | 9 |
+第三次两两比较,6 &gt; 1交换
+交换前状态| 2 | 4 | 6 | 1 | 5 | 9 |
+交换后状态| 2 | 4 | 1 | 6 | 5 | 9 |
+第四次两两比较,6 &gt; 5交换
+交换前状态| 2 | 4 | 1 | 6 | 5 | 9 |
+交换后状态| 2 | 4 | 1 | 5 | 6 | 9 |
+第五次两两比较,6 &lt; 9不交换
+交换前状态| 2 | 4 | 1 | 5 | 6 | 9 |
+交换后状态| 2 | 4 | 1 | 5 | 6 | 9 |
+第二趟排序(外循环)
+第一次两两比较2 &lt; 4不交换
+交换前状态| 2 | 4 | 1 | 5 | 6 | 9 |
+交换后状态| 2 | 4 | 1 | 5 | 6 | 9 |
+第二次两两比较,4 &gt; 1交换
+交换前状态| 2 | 4 | 1 | 5 | 6 | 9 |
+交换后状态| 2 | 1 | 4 | 5 | 6 | 9 |
+第三次两两比较,4 &lt; 5不交换
+交换前状态| 2 | 1 | 4 | 5 | 6 | 9 |
+交换后状态| 2 | 1 | 4 | 5 | 6 | 9 |
+第四次两两比较,5 &lt; 6不交换
+交换前状态| 2 | 1 | 4 | 5 | 6 | 9 |
+交换后状态| 2 | 1 | 4 | 5 | 6 | 9 |
+第三趟排序(外循环)
+第一次两两比较2 &gt; 1交换
+交换后状态| 2 | 1 | 4 | 5 | 6 | 9 |
+交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |
+第二次两两比较,2 &lt; 4不交换
+交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |
+交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |
+第三次两两比较,4 &lt; 5不交换
+交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |
+交换后状态| 1 | 2 | 4 | 5 | 6 | 9 |
+第四趟排序(外循环)无交换
+第五趟排序(外循环)无交换
+排序完毕,输出最终结果1 2 4 5 6 9
+</code></pre><p><strong>【插入排序】</strong></p>
+<pre><code>时间复杂度：O（n^2)
+空间复杂度：O（1）
+
+将数据插入到排数组的合适位置
+
+5 4 8 3 9 6
+第一趟。取第一个数 5还是放在第一个位置                 得到：5 4 8 3 9 6
+第二趟。区第二个数4 和前面的数比较。 比5小。 放前面      得到：4 5 8 3 9 6
+第三趟。 取第三个数8比较 ，放在5后面，即位置不动        得到：4 5 8 3 9 6
+    第四趟。 取第四个数3比较，比8小，比5小，比4小      得到：3 4 5 8 9 6
+·······                                        得到：3 4 5 8 9 6
+·······                                        得到：3 4 5 6 8 9
 </code></pre>
       
 
@@ -259,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/18/编程思想-递归/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/20/基本算法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +319,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/20/基本算法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          基本算法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/16/使用RumTime机制简单视线数据归解档/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用RumTime机制简单实现数据归解档</div>
+    <a href="/2017/08/18/编程思想-递归/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">递归</div>
       <i class="icon-circle-right"></i>
     </a>
   
