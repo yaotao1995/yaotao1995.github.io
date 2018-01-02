@@ -6,22 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>项目总结 | July的Blog</title>
+  <title>Archives: 2018 | July的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="【那些年我们一起踩过的坑】  主要是在项目中遇到的问题以及简单的解决方法做个记录">
-<meta property="og:type" content="article">
-<meta property="og:title" content="项目总结">
-<meta property="og:url" content="http://yoursite.com/2017/12/20/个人项目总结/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="July的Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
 <meta property="og:site_name" content="July的Blog">
-<meta property="og:description" content="【那些年我们一起踩过的坑】  主要是在项目中遇到的问题以及简单的解决方法做个记录">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/iphoneX.jpeg">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/iphoneXDemo.png">
-<meta property="og:updated_time" content="2017-12-20T09:59:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="项目总结">
-<meta name="twitter:description" content="【那些年我们一起踩过的坑】  主要是在项目中遇到的问题以及简单的解决方法做个记录">
-<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
+<meta name="twitter:title" content="July的Blog">
   
     <link rel="alternative" href="/atom.xml" title="July的Blog" type="application/atom+xml">
   
@@ -153,184 +145,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-个人项目总结" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      项目总结
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/02/分析星巴克App各种效果 - 简单分析篇/" class="archive-article-date">
+  	<time datetime="2018-01-02T14:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/02/分析星巴克App各种效果 - 简单分析篇/">分析星巴克App各种效果 - 简单分析篇</a>
     </h1>
   
 
-        
-        <a href="/2017/12/20/个人项目总结/" class="archive-article-date">
-  	<time datetime="2017-12-20T03:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>【那些年我们一起踩过的坑】</strong></p>
-<ul>
-<li>主要是在项目中遇到的问题以及简单的解决方法做个记录</li>
-</ul>
-<hr>
-<p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
-<a id="more"></a>
-<p><strong>【上线前】</strong></p>
-<p>近期在做一个金融理财的app,期间遇到了不少小问题，很多测试时候看似不存在的情况，到了实际生产环境中就出现 ( 很蓝受 )</p>
-<p>1.金融类产品对于金额比较敏感(由于之前没接触关于金融理财的app所以 很惨)，切记一点！不要使用 double 以及 float 类型进行计算，比较，因为这两个精度会出现极小极小的误差，导致在比较大小等情况时候出现失败等不应该出现的情况</p>
-<p>解决方法:</p>
-<ul>
-<li>建议使用NSDecimalNumber 该类型计算</li>
-<li>当然也可以利用  .2f 的四舍五入机制避免这极小误差导致的问题</li>
-</ul>
-<blockquote>
-<p>贴一段NSDecimalNumber介绍:顾名思义这是一个十进制数字类，继承自NSNumber，苹果针对浮点类型计算精度问题提供出来的计算类，基于十进制的科学计数法来计算，同时可以指定舍入模式，一般用于货币计算。</p>
-</blockquote>
-<p>2.开发期间apple大大发布了iphoneX ，iphone8 以及 iphone8P 这几个机型，其中8和8p的屏幕大小和7保持的一直，比较麻烦的是X这个机型 ( 啥子哟,怎么会有这么奇怪的界面 ) 比较特殊 大致样子是这样的:</p>
-<p><img src="/assets/blogImg/iphoneX.jpeg" alt="图片"></p>
-<p><img src="/assets/blogImg/iphoneXDemo.png" alt="图片"></p>
-<p>其中主要存在的问题：1.流海的高度  2.底部bar的高度  ，3.需要使用到用户touchID 解锁付款等操作的(因为类似支付宝微信用到指纹解锁 付款等 )在iphoneX上使用的faceID  脸部识别进行解锁<br>大多数需要关注的问题是：1.流海的高度，2.底部tabbar高度</p>
-<ul>
-<li>自定义导航栏 自由控制导航栏的高度  在适配时候可以判断是否IphoneX来调整高度(类似这样的宏定义  ([[UIApplication sharedApplication] statusBarFrame].size.height&gt;20?44:0)  )</li>
-<li>([[UIApplication sharedApplication] statusBarFrame].size.height&gt;20?83:49)</li>
-</ul>
-<p>3.期间发布了ios 11 版本 碰到个奇怪的问题 tableView 等有scrollView的view的内容都下移了  (哦嚯~）</p>
-<blockquote>
-<p>原因是在iOS 11中Apple干掉了ViewController中的automaticallyAdjustsScrollViewInsets这个属性，当tableview的frame超出了安全区域后系统会自动的调整SafeAreaInsets的值，而iOS 11中真正影响tableview内容与边缘的变成了adjustedContentInset而不是以前的contentInset。由于系统对adjustedContentInset进行了调整导致了tableView的内容到边缘的距离发生了变化，下移距离分别是20pt（没有navigationBar，下移了一个statusBar的高度），64pt（navigationBar的高度以及statusBar的高度）。[抄一段文字嘿嘿嘿]</p>
-</blockquote>
-<p>   解决方法:</p>
-<ul>
-<li>去掉contentInset  因为在iOS 11中系统已经默认对scrollview的显示做了处理只要其超过安全区域，它的内容显示都会在view上正常显示，所以就不需要设置contentInset，避免发生偏移。</li>
-<li>设置contentInsetAdjustmentBehavior 在不改变contentInset的情况下通过增加安全区域的范围来抵消掉SafeAreaInset的值，如果SafeAreaInset值为(20,0,0,0)，那么设置additionalSafeAreaInsets属性值为(-20,0,0,0)，则SafeAreaInsets不会对adjustedContentInset值产生影响</li>
-<li>把tableview的frame控制在安全区域内且不设置contentInset</li>
-</ul>
-<p>这里贴一个链接<a href="https://github.com/2877025939/iOS11" target="_blank" rel="external">https://github.com/2877025939/iOS11</a>  别人整理的关于ios 11和iphoneX适配的</p>
-<p><strong>【其他】</strong></p>
-<pre><code>递归必须有一个明确的结束条件，不然回想上面例2一样出现无限循环
-每一次执行应当更加接近我们的结束条件
-深层次的递归可能导致栈溢出
+        <div class="article-info info-on-right">
+          
+          
 
-暂时就想到这么多～至于代码，这样的代码搜索引擎更加专业～等有空在写下具体代码
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/20/个人项目总结/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/12/25/RunTime复习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          RunTime复习
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/08/20/基本算法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基本算法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -353,8 +210,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
