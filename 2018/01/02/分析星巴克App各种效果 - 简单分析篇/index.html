@@ -15,7 +15,9 @@
 <meta property="og:site_name" content="July的Blog">
 <meta property="og:description" content="【智障儿童日常】  某天发现喝咖啡有买一送一券，就下载了个app，然后就神奇的发现星巴克的app用户体验还不错，仔细一看是不少效果给用户一个不错的体验，所以就想着先简单分析下，有空了再完整实现各种细节。。。 这里就只写个人认为比较好实现的方法（流逼的想不到我能怎么办）">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/xbkImg.jpeg">
-<meta property="og:updated_time" content="2018-01-03T03:39:54.000Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/myVCchangeCode.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/myVCchangeCode2.png">
+<meta property="og:updated_time" content="2018-01-03T07:35:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分析星巴克App各种效果 - 简单分析篇">
 <meta name="twitter:description" content="【智障儿童日常】  某天发现喝咖啡有买一送一券，就下载了个app，然后就神奇的发现星巴克的app用户体验还不错，仔细一看是不少效果给用户一个不错的体验，所以就想着先简单分析下，有空了再完整实现各种细节。。。 这里就只写个人认为比较好实现的方法（流逼的想不到我能怎么办）">
@@ -189,16 +191,16 @@
 </li>
 </ul>
 <p>这三个效果大致就是下面的图片：</p>
-<div align="center"><br><iframe height="619" width="344" src="http://ac-vvom4crs.clouddn.com/b44ea0eefb101fdf8726.gif"><br></iframe></div><br>    4.上面三个都是比较简单的实现，下面一个再页面跳转的时候出现的效果稍微复杂一点，还是先看下效果<br><br>    <div align="center"><br>    <iframe height="619" width="344" src="http://ac-vvom4crs.clouddn.com/529b2a060d80aae72d0a.gif"><br>    </iframe></div>
+<div align="center"><br><iframe height="619" width="344" src="http://ac-vvom4crs.clouddn.com/b44ea0eefb101fdf8726.gif"><br></iframe></div><br>    4.上面三个都是比较简单的实现，下面一个在页面跳转的时候出现的效果稍微复杂一点，还是先看下效果<br><br>    <div align="center"><br>    <iframe height="619" width="344" src="http://ac-vvom4crs.clouddn.com/529b2a060d80aae72d0a.gif"><br>    </iframe></div>
 
 <p>这个时候有两种方式：1.瞎猜，这个效果给我我怎么去实现，2.使用Reveal等UI分析工具先看下页面布局再深入考虑怎么实现的</p>
 <p>第一种瞎猜先试试看（化繁为简）：<br>    1.点击”了解更多”按钮时候，中间黑色view显示并且向上下展开，vc里面的View的展示都是在这个黑色的View的展开动画结束之后再init的（这里有个值得注意的地方，黑色view的位置大小和”星享俱乐部”的cell位置大小是一致的，比较好理解主要是要获取到cell位置，其他比较好实现），<br>    2.在”星享俱乐部”vc关闭的时候可以看到页面的view都隐藏再消失，后面的黑色View缩小并且带有透明度直至消失，关闭按钮点击时候页面的view隐藏，然后回调告诉前面vc，即将销毁”星享俱乐部”vc，可以执行缩小动画了，在vc销毁的时候，黑色view的缩小和透明度动画执行<br>    3.”星享俱乐部”vc里面的view在显示的时候有一个从上往下依次展示的过程，第一时间想到了一种比较笨的方法，页面显示initview<br>    上面盖了一层和背景色一样的遮罩层，在页面展示完毕时候开始执行从上往下运动或者减少的一个动画，视觉上给人一种页面上的文字依次展示的效果，直至页面展示完毕动画完成，遮罩层销毁</p>
-<p><strong>【未登录】</strong></p>
-<pre><code>递归必须有一个明确的结束条件，不然回想上面例2一样出现无限循环
-每一次执行应当更加接近我们的结束条件
-深层次的递归可能导致栈溢出
+<p>简单写了下，大致效果如下：</p>
+<div align="center"><br><iframe height="619" width="344" src="http://ac-vvom4crs.clouddn.com/af687becfbcc37364c6d.gif"><br></iframe></div>
 
-暂时就想到这么多～至于代码，这样的代码搜索引擎更加专业～等有空在写下具体代码
+<p>还是直接上个代码好了<br><img src="/assets/blogImg/myVCchangeCode.png" alt="图片">   <img src="/assets/blogImg/myVCchangeCode2.png" alt="图片"></p>
+<p><strong>【未登录】</strong></p>
+<pre><code>未完待续。。。
 </code></pre>
       
 
