@@ -6,22 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode刷题 | July的Blog</title>
+  <title>Archives: 2019/3 | July的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="【数据结构与算法】  LeetCode两题（两数之和，两数相加） 为了复习数据结构和算法刷的题 用比较白话的方式表达个人的理解">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode刷题">
-<meta property="og:url" content="http://yoursite.com/2018/07/04/LeetCode刷题1,2/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="July的Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
 <meta property="og:site_name" content="July的Blog">
-<meta property="og:description" content="【数据结构与算法】  LeetCode两题（两数之和，两数相加） 为了复习数据结构和算法刷的题 用比较白话的方式表达个人的理解">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/20180704img1.png">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/20180704img2.png">
-<meta property="og:updated_time" content="2018-12-19T06:40:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode刷题">
-<meta name="twitter:description" content="【数据结构与算法】  LeetCode两题（两数之和，两数相加） 为了复习数据结构和算法刷的题 用比较白话的方式表达个人的理解">
-<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
+<meta name="twitter:title" content="July的Blog">
   
     <link rel="alternative" href="/atom.xml" title="July的Blog" type="application/atom+xml">
   
@@ -153,256 +145,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode刷题1,2" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      LeetCode刷题
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/03/12/逆向记录篇-极客时间/" class="archive-article-date">
+  	<time datetime="2019-03-12T08:15:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/03/12/逆向记录篇-极客时间/">逆向记录篇-极客时间</a>
     </h1>
   
 
-        
-        <a href="/2018/07/04/LeetCode刷题1,2/" class="archive-article-date">
-  	<time datetime="2018-07-04T12:35:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>【数据结构与算法】</strong></p>
-<ul>
-<li>LeetCode两题（两数之和，两数相加）</li>
-<li>为了复习数据结构和算法刷的题</li>
-<li>用比较白话的方式表达个人的理解</li>
-</ul>
-<hr>
-<p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
-<a id="more"></a>
-<p>以下是题目的截图<br><img src="/assets/blogImg/20180704img1.png" alt="图片"></p>
-<pre><code>给定一个数组，以及一个数，求数组内是否存在两数和能得到这个数的，有就输出位置
-时间复杂度减少需要使用到哈希表
-</code></pre><p>1.暴力穷举法，for循环将所有可能循环遍<br>    时间复杂度：O(n2)<br>    空间复杂度：O(1)</p>
-<pre><code>public int[] twoSum(int[] nums, int target) {
-for (int i = 0; i &lt; nums.length; i++) {
-    for (int j = i + 1; j &lt; nums.length; j++) {
-        if (nums[j] == target - nums[i]) {
-        return new int[] { i, j };
-            }
-        }
-    }
-  throw new IllegalArgumentException(&quot;No two sum solution&quot;);
-}
+        <div class="article-info info-on-right">
+          
+          
 
-/*
-for循环所有可能，每个数都和其他数进行匹配
-效率底，比较傻瓜式
-*/
-</code></pre><p>2.两边哈希表<br>    时间复杂度：O(n)<br>    空间复杂度：O(n)</p>
-<pre><code>public int[] twoSum(int[] nums, int target) {
-Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
-for (int i = 0; i &lt; nums.length; i++) {
-    map.put(nums[i], i);
-        }
-for (int i = 0; i &lt; nums.length; i++) {
-    int complement = target - nums[i];
-    if (map.containsKey(complement) &amp;&amp; map.get(complement) != i) {
-        return new int[] { i, map.get(complement) };
-            }
-    }
-throw new IllegalArgumentException(&quot;No two sum solution&quot;);
-</code></pre><p>}</p>
-<pre><code>/*
-1.使用哈希表（对于Ios开发，哈希表就相当于字典），将数组中的值以键值对的方式放到哈希表中
-2.条件已知 &quot;和&quot; -&gt; target，以及其中一个数（就是数组取的每个值）， 那我们就能得到另外一个数是多少
-    即  target - nums[i] = ？
-    求得的 ？  可以作为key  数组里面的值变成了Key，每个值对应的下标变成了Value
-问题简单化，使用哈希表键值对的特性，巧妙利用 &apos;数组值&apos; 作为哈希表的 &apos;key&apos;&apos;对应下标&apos;作为哈希表的&apos;value&apos;
-    判断是否存在,存在的话就说明有对应两数，不存在就没有
-*/
-</code></pre><p>3.一遍哈希表</p>
-<pre><code>public int[] twoSum(int[] nums, int target) {
-Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
-for (int i = 0; i &lt; nums.length; i++) {
-    int complement = target - nums[i];
-    if (map.containsKey(complement)) {
-    return new int[] { map.get(complement), i };
-        }
-    map.put(nums[i], i);
-    }
-    throw new IllegalArgumentException(&quot;No two sum solution&quot;);
-}
-
-/*
-在上述两遍哈希表中其实是对哈希表执行了两遍，第一遍是将数组的数据丢进哈希表，第二遍是遍历
-第一遍是将数组的数据丢进哈希表的这一步，可以取巧，在下面一次遍历中判断添加，这样不会漏掉数据，且只对哈希表操作一次
-*/
-</code></pre><p><img src="/assets/blogImg/20180704img2.png" alt="图片"></p>
-<p>这里必须要复习下单链表的逆序（虽然用处不大）<br>单链表逆序<br>本意是使用prev所指向的nil  从头结点开始进行逆序</p>
-<pre><code>1.
-head-&gt;next = prev;  //将head的next指针指向prev对应的节点
-prev = head;        //将prev指向head所在的节点，这样head以及prev同时指向头结点
-head = next;        //将head向后移，这个时候head和next指向的都是next所在的节点
-next = head-&gt;next;  //最后next 指向head所指向的next（因为前一步head已经和next指向了同一个节点）将next向后移
-
-2.
-next = head-&gt;next;
-head-&gt;next = prev;
-prev = head;
-head = next;
-
-这里的两种循环本体的区别
-第一种在循环到最后当head和next都指向nil的时候，next还需要向后移一步，这个时候肯定是越界的
-第二种方法将 next = head-&gt;next; 提到了第一步，先后移，巧妙的避开了第一种的弊端
-</code></pre><p>言归正传：<br>给两个单链表，用于保存两个非负整数，逆序存放，求两数之和</p>
-<p>(2 -&gt; 6 -&gt; 4)  +  (1 -&gt; 7 -&gt; 3)  = ( 3 -&gt; 3 -&gt; 8)</p>
-<p>462 + 371 = 833</p>
-<p>这里的逆序已经是提供了便利的条件了</p>
-<p>将两个链表顺序执行相加，若大于10，后一位加1</p>
-<p>若链表执行到nil  表示执行到了链表尾部节点</p>
-<p>当两个链表指针指向的节点都为空时候 结束</p>
-<p>题目可以出的更麻烦一点，数字不逆序，这样在计算的时候需要对两个单链表进行一遍的逆序再执行如下操作</p>
-<pre><code>public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-    ListNode nNode = new ListNode(0); // new一个新的 ListNode
-    ListNode p =  l1 , q = l2 , arr = nNode; //用p指代l1  q指代l2   arr指代nNode，好看一点
-
-    int carry = 0;//若相加大于10，后一个节点相加需要加上1的，这个carry 用于存放这个1
-
-    while(p != null || q != null){          //只要有一个节点不为null 就要继续执行
-        int a = (p != null) ? p.val : 0;    //三目运算判断节点是否为null，为null就取0
-        int b = (q != null) ? q.val : 0;    //三目运算判断节点是否为null，为null就取0
-        int num = carry + a + b;            //相加得到对应新节点的值
-        carry = num / 10;                   //取整，判断相加是否超过10了
-        arr.next = new ListNode(num % 10);  //对新链表赋值
-        arr = arr.next;                     //arr指向下一个节点，用于下一个循环使用
-
-       if(p != null) p = p.next;           //判断链表是否到了尾节点,没有就指向下一个节点
-        if(p != null) p = p.next;           //判断链表是否到了尾节点,没有就指向下一个节点
-    }
-    if(carry &gt; 0){                          //若循环结束carry还大于0，表示最后一个有值的节点相加大于10，新链表需要再增加一个节点存放这个值
-        arr.next = new ListNode(carry);     //存放最后一个一个值
-    }
-    return nNode.next;
-}
-</code></pre><p>over。。。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/07/04/LeetCode刷题1,2/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/07/24/逆向记录篇-iFunBox/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          逆向记录篇-iFunBox
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/06/20/星巴克App分析篇二/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用Reveal星巴克AppUI</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -425,8 +210,8 @@ head = next;
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
