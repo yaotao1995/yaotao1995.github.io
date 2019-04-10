@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | July的Blog</title>
+  <title>AFNetworking源码解析-AFNetworkReachabilityManager | July的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="July的Blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="【源码解析】  闲的蛋疼 AFNetworkReachabilityManager">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AFNetworking源码解析-AFNetworkReachabilityManager">
+<meta property="og:url" content="http://yoursite.com/2019/04/07/AFNetworking源码解析-AFNetworkReachabilityManager/index.html">
 <meta property="og:site_name" content="July的Blog">
+<meta property="og:description" content="【源码解析】  闲的蛋疼 AFNetworkReachabilityManager">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
+<meta property="og:updated_time" content="2019-04-10T07:44:48.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="July的Blog">
+<meta name="twitter:title" content="AFNetworking源码解析-AFNetworkReachabilityManager">
+<meta name="twitter:description" content="【源码解析】  闲的蛋疼 AFNetworkReachabilityManager">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/images.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="July的Blog" type="application/atom+xml">
   
@@ -145,224 +151,303 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-AFNetworking源码解析-AFNetworkReachabilityManager" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AFNetworking源码解析-AFNetworkReachabilityManager
+    </h1>
+  
+
+        
+        <a href="/2019/04/07/AFNetworking源码解析-AFNetworkReachabilityManager/" class="archive-article-date">
+  	<time datetime="2019-04-07T15:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>【源码解析】</strong></p>
+<ul>
+<li>闲的蛋疼</li>
+<li>AFNetworkReachabilityManager</li>
+</ul>
+<hr>
+<p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
+<a id="more"></a>
+<blockquote>
+<ol>
+<li>AFNetworkReachabilityManager是AFNetworking 的一个监控网络状态的类，用来帮助我们监听网络的变化</li>
+<li>先说结论，AFNetworkReachabilityManager调用了原生的SCNetworkReachabilityRef</li>
+<li>SCNetworkReachabilityRef 来自 SystemConfiguration.framework ， 其中工具 SCNetworkReachability 就是用来监测网络状况的</li>
+</ol>
+<p> <a href="https://github.com/yaotao1995/YTAFNetworkingInterpretation.git" target="_blank" rel="external">https://github.com/yaotao1995/YTAFNetworkingInterpretation.git</a>  </p>
+</blockquote>
+<p><br><br><strong> 一、简单使用 </strong></p>
+<pre><code>初始化代码如下：
+//能够检测当前网络是wifi,蜂窝网络,没有网
+[[AFNetworkReachabilityManager sharedManager]
+setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+// 网络发生变化时 会触发这里的代码
+    switch (status) {
+        case AFNetworkReachabilityStatusReachableViaWiFi:
+            // NSLog(@&quot;当前是wifi环境&quot;);
+        break;
+
+        case AFNetworkReachabilityStatusNotReachable:
+            // NSLog(@&quot;当前无网络&quot;);
+        break;
+
+        case AFNetworkReachabilityStatusUnknown:
+            // NSLog(@&quot;当前网络未知&quot;);
+        break;
+
+        case AFNetworkReachabilityStatusReachableViaWWAN:
+            // NSLog(@&quot;当前是蜂窝网络&quot;);
+        break;
+            default:
+        break;
+    }
+}];
+//开启网络检测  需要时候使用
+[[AFNetworkReachabilityManager sharedManager] startMonitoring];
+</code></pre><p><br><br><strong> 二、源码 </strong></p>
+<blockquote>
+<p>不上代码都是耍流氓，下面是AFNetworkReachabilityManager的初始化方法</p>
+</blockquote>
+<pre><code>1.单例模式维护了一个AFNetworkReachabilityManager，单例中最终调用了manager来初始化
++(instancetype)sharedManager {
+        static AFNetworkReachabilityManager *_sharedManager = nil;
+        static dispatch_once_t onceToken;
+        dispatch_once(&amp;onceToken, ^{
+            _sharedManager = [self manager];
+        });
+    return _sharedManager;
+}
+
+2.来看看函数 manager ，先简单看下，条件成立与否都返回address 这个结构体 给函数managerForAddress，区别就在于条件成立 结构体类型是sockaddr_in6 ，不成立使用 sockaddr_in，以及结构体成员变量sin_family的赋值问题；至于bzero(）内存分配方法暂且先不管；
++ (instancetype)manager
+{
+    #if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) &amp;&amp; __IPHONE_OS_VERSION_MIN_REQUIRED &gt;= 90000) || (defined(__MAC_OS_X_VERSION_MIN_REQUIRED) &amp;&amp; __MAC_OS_X_VERSION_MIN_REQUIRED &gt;= 101100)
+        struct sockaddr_in6 address;
+        bzero(&amp;address, sizeof(address));
+        address.sin6_len = sizeof(address);
+        address.sin6_family = AF_INET6;
+    #else
+        struct sockaddr_in address;
+        bzero(&amp;address, sizeof(address));
+        address.sin_len = sizeof(address);
+        address.sin_family = AF_INET;
+    #endif
+    return [self managerForAddress:&amp;address];
+}
+
+3. 先看下条件(defined(__IPHONE_OS_VERSION_MIN_REQUIRED) &amp;&amp; __IPHONE_OS_VERSION_MIN_REQUIRED &gt;= 90000) || (defined(__MAC_OS_X_VERSION_MIN_REQUIRED) &amp;&amp; __MAC_OS_X_VERSION_MIN_REQUIRED &gt;= 101100)
+
+其中两部分条件可以分为：MAC_OS的版本要求以及IPHONE_OS版本要求，这里暂且就看下IPHONE_OS 的版本要求，要求__IPHONE_OS_VERSION_MIN_REQUIRED 值大于等于 90000 即 版本大于等于ios9
+
+4. 两结构体看原文注释就知道了 sockaddr_in6：Socket address for IPv6；sockaddr_in：Socket address, internet style.也就是说
+在这里区分了ipv6 和 ipv4 的，这里存在一个ipv4和ipv6的转换问题有兴趣可以查资料看下
+    struct sockaddr_in6 {
+        __uint8_t    sin6_len;
+        sa_family_t    sin6_family;
+        in_port_t    sin6_port;
+        __uint32_t    sin6_flowinfo;
+        struct in6_addr    sin6_addr;
+        __uint32_t    sin6_scope_id;
+    };
+
+    struct sockaddr_in {
+        __uint8_t    sin_len;
+        sa_family_t    sin_family;
+        in_port_t    sin_port;
+        struct    in_addr sin_addr;
+        char        sin_zero[8];
+    };
+
+5.再往下走 得到区分ipv6的地址之后 managerForAddress：(const void *)address 函数
+  这里我们可以较为清楚看到，af实际调用的就是 原生的 SCNetworkReachabilityRef
+  使用这个SCNetworkReachabilityRef创建了我们的AFNetworkReachabilityManager
+  查看 SCNetworkReachabilityRef，它也是个结构体，官方解释为：网络地址或名字的句柄
+
++ (instancetype)managerForAddress:(const void *)address {
+    SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *)address);
+    AFNetworkReachabilityManager *manager = [[self alloc] initWithReachability:reachability];
+    CFRelease(reachability);
+    return manager;
+}
+
+6. 这里我贴一段使用 SystemConfiguration.framework 反汇编出来的 SCNetworkReachabilityCreateWithAddress函数的伪代码 有兴趣可以看下
+int _SCNetworkReachabilityCreateWithAddress(int arg0, int arg1) {
+r7 = (sp - 0x14) + 0xc;
+sp = sp - 0x24;
+r4 = arg0;
+var_1C = *0x3e5e5944;
+r5 = _is_valid_address(arg1);
+if (r5 == 0x0) goto loc_1b2278be;
+
+
+7. 到这里AFNetworkReachabilityManager还没创建好，CFRetain表示传入的reachability不为空，赋给本身的SCNetworkReachabilityRef，并且修改状态为 AFNetworkReachabilityStatusUnknown，至此初始化完成
+- (instancetype)initWithReachability:(SCNetworkReachabilityRef)reachability {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    _networkReachability = CFRetain(reachability);
+    self.networkReachabilityStatus = AFNetworkReachabilityStatusUnknown;
+    return self;
+}
+
+8. 创建好了，接下去要用了，startMonitoring函数是开启监测用的
+- (void)startMonitoring {
+    //启用之前先调用停止函数
+    [self stopMonitoring];
+    //判断上述的SCNetworkReachabilityRef是否存在
+    if (!self.networkReachability) {
+        return;
+}
+
+//写好block，用来回调状态
+__weak __typeof(self)weakSelf = self;
+AFNetworkReachabilityStatusBlock callback = ^(AFNetworkReachabilityStatus status) {
+    __strong __typeof(weakSelf)strongSelf = weakSelf;
+
+    strongSelf.networkReachabilityStatus = status;
+    if (strongSelf.networkReachabilityStatusBlock) {
+        strongSelf.networkReachabilityStatusBlock(status);
+    }
+};
+
+    //SCNetworkReachabilityContext 这个结构体保存了用户的数据，以及SCNetworkReachabilitySetCallback回调的信息
+    SCNetworkReachabilityContext context = {0, (__bridge void *)callback, AFNetworkReachabilityRetainCallback, AFNetworkReachabilityReleaseCallback, NULL};
+
+    //只有SCNetworkReachabilitySetCallback设置了 上述SCNetworkReachabilityContext 结构体 ，才能生效
+    SCNetworkReachabilitySetCallback(self.networkReachability, AFNetworkReachabilityCallback, &amp;context);
+
+    //SCNetworkReachabilityScheduleWithRunLoop 接收三个参数，创建的self.networkReachability，需要循环在哪个runloop上，以及runloop的模式，当网络状态发生变化时就会执行SCNetworkReachabilitySetCallback方法中的callout回调
+    //也就是说，这里将创建的self.networkReachability 丢进去，在主线程上循环，runloop模式为 kCFRunLoopCommonModes
+        SCNetworkReachabilityScheduleWithRunLoop(self.networkReachability, CFRunLoopGetMain(), kCFRunLoopCommonModes);
+
+    // 异步
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
+            //SCNetworkReachabilityFlags 状态标识 就是这个了，我们最终要得到的状态标识就是这个flags！！！！！！！
+            SCNetworkReachabilityFlags flags;
+            //SCNetworkReachabilityGetFlags 获取网络状态丢到 flags ，最后将网络状态callback
+            if (SCNetworkReachabilityGetFlags(self.networkReachability, &amp;flags)) {
+                AFPostReachabilityStatusChange(flags, callback);
+            }
+    });
+}
+</code></pre><p><br><br><strong>【其他】</strong><br>     这段时间在复习汇编，等汇编复习完了，再从汇编的角度分析下…</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/14/关于金融类APP上架被拒的问题/" class="archive-article-date">
-  	<time datetime="2018-03-14T03:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/14/关于金融类APP上架被拒的问题/">关于金融类APP上架被拒的问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/02/分析星巴克App各种效果 - 简单分析篇一/" class="archive-article-date">
-  	<time datetime="2018-01-02T14:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/02/分析星巴克App各种效果 - 简单分析篇一/">分析星巴克App各种效果 - 简单分析篇一</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/25/RunTime复习/" class="archive-article-date">
-  	<time datetime="2017-12-25T15:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/25/RunTime复习/">RunTime复习</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-          
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2019/04/07/AFNetworking源码解析-AFNetworkReachabilityManager/" alt="微信分享二维码">
+    </div>
+</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/20/个人项目总结/" class="archive-article-date">
-  	<time datetime="2017-12-20T03:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/12/逆向记录篇-极客时间/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">逆向记录篇-极客时间</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/20/个人项目总结/">项目总结</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/20/基本算法/" class="archive-article-date">
-  	<time datetime="2017-08-20T03:47:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/20/基本算法/">基本算法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/18/编程思想-递归/" class="archive-article-date">
-  	<time datetime="2017-08-18T03:28:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/18/编程思想-递归/">递归</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/16/使用RumTime机制简单视线数据归解档/" class="archive-article-date">
-  	<time datetime="2017-08-16T01:36:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/16/使用RumTime机制简单视线数据归解档/">使用RumTime机制简单实现数据归解档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -386,8 +471,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
