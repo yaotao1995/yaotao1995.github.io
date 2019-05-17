@@ -414,20 +414,21 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h2 id="姚涛"><a href="#姚涛" class="headerlink" title="姚涛"></a>姚涛</h2><ul>
-<li>15年12月入的iOS坑至今 - 目前在杭州</li>
-<li><a href="https://github.com/yaotao1995" target="_blank">GitHub</a></li>
-<li><a href="https://weibo.com/3852766965" target="_blank">微博</a></li>
-<li><a href="mailto:1007881775@qq.com" target="_blank">邮箱</a></li>
-<li>QQ：1007881775</li>
-<li>了解逆向 | 了解RN | 了解小程序</li>
+<li>手机：17606573496</li>
+<li>QQ / 邮箱：1007881775</li>
+<li>15年12月入的iOS坑至今 | 3年</li>
+<li>宁波职业技术学院 - 计算机应用技术 - 大专</li>
+<li>目前所在地：杭州 | 期望地点：杭州 | 期望薪资：14k+</li>
+<li>逆向: 了解  |  RN: 了解  |  小程序: 了解</li>
 <li>证书：JAVA软件工程师 | 计算机网络管理员 | 电子计算机调试工 | 二维CAD绘图</li>
+<li><a href="https://github.com/yaotao1995" target="_blank">GitHub</a> | <a href="mailto:1007881775@qq.com" target="_blank">邮箱</a></li>
 </ul>
 <h2 id="逆向iOS"><a href="#逆向iOS" class="headerlink" title="逆向iOS"></a>逆向iOS</h2><blockquote>
 <p>工具：越狱手机 | Mac电脑 | Reveal | iFunBox | debugsever | lldb | script | ssh | Hopper | theos</p>
 </blockquote>
 <h4 id="一、微信添加自动抢红包功能"><a href="#一、微信添加自动抢红包功能" class="headerlink" title="一、微信添加自动抢红包功能"></a>一、微信添加自动抢红包功能</h4><ul>
 <li>简述：起初是想简单实现微信自动抢红包功能也就是手动触发红包消息的点击；后使用debugsever和lldb动态调试，找到红包接收消息的函数以及发送抢红包的函数；</li>
-<li>所以有了方案1：正常手动触发点击事件 ，方案2：红包接收函数一但检测到红包进来直接根据参数，调用发送红包函数，</li>
+<li>所以有了方案1：正常手动触发点击事件 ，方案2：红包接收函数一但检测到红包进来直接根据参数，调用发送打开红包函数，</li>
 <li><p>优劣： 方案1简单甚至不需要动态调试，方案2：效率，根本不需要打开红包页面</p>
 </li>
 <li><p>碰到问题： 调试过程会出现封号（手动狗头），温馨提示，在不百分百确定参数名参数值时候请不要随意调试发送红包函数</p>
@@ -449,39 +450,46 @@
 <li>简述：优酷视频iOS端去掉广告</li>
 <li>遗留：6分钟试看视频，去掉了广告但是6分钟限制还在，有时间再搞</li>
 </ul>
-</li>
+<h4 id="等··"><a href="#等··" class="headerlink" title="等··"></a>等··</h4></li>
 </ul>
 <h2 id="iOS项目"><a href="#iOS项目" class="headerlink" title="iOS项目"></a>iOS项目</h2><h4 id="一、互惠金服"><a href="#一、互惠金服" class="headerlink" title="一、互惠金服"></a>一、互惠金服</h4><ul>
 <li>性质：P2P投资类App</li>
-<li>职责：独立开发，从项目需求分析，项目启动，框架搭建，代码编写，测试，上架</li>
-<li>使用的三方：AFNetWorking | SDWebImage | Masonry | YYModel </li>
+<li>职责：iOS端负责人，独立开发到上架</li>
+<li>主要内容：1. 开发过程中pods负责管理三方；2. 在AFNetWorking基础上封装一个管理者，其中包括网络状态的监测，公共请求接口等主要解决易读高复用的网络请求；3. 利用Masonry相对布局框架布局，整个项目的布局全用代码实现；4. 项目需要添加刻度尺，drawRect绘制的尺子配合scrollView 达到刻度尺效果，同时配合scrollView代理回调刻度尺位置；5. 项目需要使用UICollectionView自定义日历控件；6. 等等..</li>
+<li>性能优化：1. 启动优化：去掉了用不到的类，用不到三方，相同功能扩展合并掉了；2. 帧率优化，使用Rendering工具查看像素标红，通过监听runloop的阶段之间的持续时间来判断是否卡顿；3. 使用Leaks以及MLeaksFinder三方查找并处理循环引用</li>
+<li>安全问题：1. 敏感数据采用md5配合自定义字段加密，用户登录密码，金额等；2. 方法名混淆 ； 3. WebView防止中间人攻击，使用的AFNetWorking证书校验</li>
 <li>项目难点：上架 </li>
-<li>难点解决：搞定资质问题，上架时候需要将项目情况和拥有的资质说明清楚</li>
+<li>难点解决：资质问题（金融许可证），上架时候需要将项目情况和拥有的资质说明清楚</li>
 </ul>
 <h4 id="二、二郎神在线"><a href="#二、二郎神在线" class="headerlink" title="二、二郎神在线"></a>二、二郎神在线</h4><ul>
 <li>性质：车辆追踪定位类App</li>
-<li>职责：独立开发</li>
-<li>使用的三方：百度SDK | 高德SKD | AFNetWorking | SDWebImage | Masonry | YYModel </li>
+<li>职责：iOS端负责人，独立开发到上架</li>
 <li>项目难点：查看车辆历史运动轨迹功能</li>
 <li>难点解决：后台配合将根据时间段去车辆定位的定位度数组，根据数组，划线，以及将锚点做动画位移，达到车辆运动效果</li>
 </ul>
 <h4 id="三、影城"><a href="#三、影城" class="headerlink" title="三、影城"></a>三、影城</h4><ul>
 <li>性质：影院购票类APP</li>
-<li>职责：独立开发</li>
+<li>职责：iOS端负责人，独立开发</li>
 <li>使用的三方：AFNetWorking | SDWebImage | Masonry | YYModel 等</li>
 <li>项目难点：选座购票问题</li>
-<li>难点解决：模仿猫眼选座功能实现，大的ScrollView排放Btn达到座位效果，选座 - 点击按钮，其中包括座不规则，有过道等问题</li>
+<li>难点解决：模仿猫眼选座功能实现，大的ScrollView排放Btn达到座位效果，选座 - 点击按钮，其中包括座位不规则，有过道等问题</li>
 </ul>
-<h4 id="等··"><a href="#等··" class="headerlink" title="等··"></a>等··</h4><h2 id="小程序项目"><a href="#小程序项目" class="headerlink" title="小程序项目"></a>小程序项目</h2><h4 id="理财Demo"><a href="#理财Demo" class="headerlink" title="理财Demo"></a>理财Demo</h4><ul>
+<h4 id="等··-1"><a href="#等··-1" class="headerlink" title="等··"></a>等··</h4><h2 id="小程序项目"><a href="#小程序项目" class="headerlink" title="小程序项目"></a>小程序项目</h2><h4 id="理财Demo"><a href="#理财Demo" class="headerlink" title="理财Demo"></a>理财Demo</h4><ul>
 <li>性质：模仿互惠金服APP</li>
 <li>职责：独立开发（未写完）</li>
 </ul>
 <p><div align="center">  <img src="/assets/blogImg/aboutproject1.png" alt="理财Demo">     </div></p>
+<h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><ul>
+<li>宁波职业技术学院 - 电子信息工程学院 - 计算机应用技术</li>
+<li>课程：java ，c++ ， 数据结构c语言 ，oracle ，mysql ， 计算机组成原理 ， Android ， 软件测试</li>
+</ul>
+<h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><ul>
+<li>宁波龙腾软件开发有限公司  iOS开发工程师 2015.12 ~ 2017.2 </li>
+<li>绍兴会有（外包）                iOS开发工程师 2017.3 ~ 2017.7</li>
+<li>互惠金服                              iOS开发工程师 2017.8 ~ 至今</li>
+</ul>
 <h2 id="兴趣爱好"><a href="#兴趣爱好" class="headerlink" title="兴趣爱好"></a>兴趣爱好</h2><ul>
-<li>桌球</li>
-<li>网球</li>
-<li>乒乓球</li>
-<li>羽毛球</li>
+<li>桌球 | 网球 | 乒乓球 | 羽毛球</li>
 </ul>
 
         
