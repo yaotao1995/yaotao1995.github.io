@@ -56,14 +56,11 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="【起因】
-
+    <meta name="description" itemprop="description" content="起因
 早上有老哥推荐个戴铭的课程，于是乎就花了68大洋买了
 中午就有老哥问我买不买戴铭的课，18块钱！！！！
-很好！我想看看你们这些资料是怎么拿到手的
-
-
-     ">
+很好！我想看看你们这些资料是怎么拿到手的 
+">
     <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
@@ -239,19 +236,16 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="逆向记录篇-极客时间 | YaoTao&#39;sBlog">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="【起因】
-
+    <meta property="og:description" content="起因
 早上有老哥推荐个戴铭的课程，于是乎就花了68大洋买了
 中午就有老哥问我买不买戴铭的课，18块钱！！！！
-很好！我想看看你们这些资料是怎么拿到手的
-
-
-     ">
+很好！我想看看你们这些资料是怎么拿到手的 
+">
     
 
     
         <meta property="article:published_time" content="Tue Mar 12 2019 16:15:28 GMT+0800">
-        <meta property="article:modified_time" content="Wed Apr 10 2019 15:09:56 GMT+0800">
+        <meta property="article:modified_time" content="Sat May 18 2019 02:48:44 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +268,7 @@
     "mainEntityOfPage": "http://yoursite.com/2019/03/12/逆向记录篇-极客时间/index.html",
     "headline": "逆向记录篇-极客时间",
     "datePublished": "Tue Mar 12 2019 16:15:28 GMT+0800",
-    "dateModified": "Wed Apr 10 2019 15:09:56 GMT+0800",
+    "dateModified": "Sat May 18 2019 02:48:44 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "July",
@@ -293,14 +287,11 @@
         }
     },
     "keywords": "",
-    "description": "【起因】
-
+    "description": "起因
 早上有老哥推荐个戴铭的课程，于是乎就花了68大洋买了
 中午就有老哥问我买不买戴铭的课，18块钱！！！！
-很好！我想看看你们这些资料是怎么拿到手的
-
-
-     ",
+很好！我想看看你们这些资料是怎么拿到手的 
+",
 }
 </script>
 
@@ -358,6 +349,15 @@
 
     <!-- Left aligned menu below button -->
     
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#起因"><span class="post-toc-number">1.</span> <span class="post-toc-text">起因</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、准备"><span class="post-toc-number">2.</span> <span class="post-toc-text">一、准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、过程"><span class="post-toc-number">3.</span> <span class="post-toc-text">二、过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#都脱壳了，头文件都导出来了，你给我看这个？！"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">(都脱壳了，头文件都导出来了，你给我看这个？！)</span></a></li></ol></li></ol>
+    </ul>
     
 
 
@@ -491,57 +491,46 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><strong>【起因】</strong></p>
-<ul>
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><ul>
 <li>早上有老哥推荐个戴铭的课程，于是乎就花了68大洋买了</li>
 <li>中午就有老哥问我买不买戴铭的课，18块钱！！！！</li>
-<li>很好！我想看看你们这些资料是怎么拿到手的</li>
+<li>很好！我想看看你们这些资料是怎么拿到手的 </li>
 </ul>
-<hr>
-<p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
 <a id="more"></a>
-<p><strong>【极客时间】</strong></p>
-<p>工具：青花瓷，Cycript，ssh，越狱手机，Reveal，iFunBox，Clutch </p>
-<p>开工：<br>    首先用最简单的方法看看能不能拿到数据，青花瓷获取链接，不出意外，全是锁上的<br>那就只能进去看看了，先d简单分析一下：先看看这个试听的模板，极客时间的程序猿老哥不会闲到一样的模板写好几个view吧<br>做了是否购买的判断，不过有试听课程，nice<br>    国际惯例嘛：</p>
-<pre><code>1.课程专题列表tableView肯定是有一个列表数据的，每个cell对应每个cell的id
-2.使用这个id请求对应页面的数据，进行展示
-3.我先看看某个页面的链接，再回去找这个列表的id
-</code></pre><hr>
-<ul>
-<li><strong>1.usb桥接，ssh链接localhost 进入手机</strong></li>
+<h2 id="一、准备"><a href="#一、准备" class="headerlink" title="一、准备"></a>一、准备</h2><ul>
+<li>工具：青花瓷，Cycript，ssh，越狱手机，Reveal，iFunBox，Clutch </li>
+<li><p>开工：首先用最简单的方法看看能不能拿到数据，青花瓷获取链接，不出意外，全是锁上的，那就只能进去看看了，先d简单分析一下：先看看这个试听的模板，极客时间的程序猿老哥不会闲到一样的模板写好几个view吧，做了是否购买的判断，不过有试听课程，nice </p>
+<blockquote>
+<p>国际惯例：<br>  1.课程专题列表tableView肯定是有一个列表数据的，每个cell对应每个cell的id<br>  2.使用这个id请求对应页面的数据，进行展示<br>  3.我先看看某个页面的链接，再回去找这个列表的id</p>
+</blockquote>
+</li>
 </ul>
+<h2 id="二、过程"><a href="#二、过程" class="headerlink" title="二、过程"></a>二、过程</h2><blockquote>
+<p>1.usb桥接，ssh链接localhost 进入手机__</p>
+</blockquote>
 <p><img src="/assets/blogImg/jikeshijian1.png" alt="图片">     </p>
-<ul>
-<li><p><strong>2. ps -A 先看下安装的app，发现有个Zeus这么个东西，决定就是你了</strong></p>
-</li>
-<li><p><strong>3. 打开Reveal，由于原来没有在reveal的plist添加过极客时间的id</strong></p>
-</li>
-<li><p><strong>4. Clutch -i 查看下安装的app，发现id是’极客时间-注册送30元新人礼券 <org.******.geektime>‘    还是打个码好了。。。</org.******.geektime></strong></p>
-</li>
-<li><p><strong>5. 打开iFunBox找到plist添加上去这个id</strong></p>
-</li>
-<li><p><strong>6. 重新打开Reveal，先不急这进去</strong></p>
-</li>
-<li><p><strong>7. 先app到指定位置（试听的页面），打开</strong></p>
-</li>
-</ul>
+<blockquote>
+<p> 2.ps -A 先看下安装的app，发现有个Zeus这么个东西，决定就是你了__</p>
+<p>3.打开Reveal，由于原来没有在reveal的plist添加过极客时间的id__</p>
+<p>4.Clutch -i 查看下安装的app，发现id是’极客时间-注册送30元新人礼券 <org.******.geektime>‘    还是打个码好了。。。__</org.******.geektime></p>
+<p>5.打开iFunBox找到plist添加上去这个id__</p>
+<p>6.重新打开Reveal，先不急这进去__</p>
+<p>7.先app到指定位置（试听的页面），打开__</p>
+</blockquote>
 <p><img src="/assets/blogImg/jikeshijian2.png" alt="图片">     </p>
-<ul>
-<li><p><strong>8. 很好，看到个WKWebView，凉了，这个时候基本可以断定，这个页面使用webView完成的，不死心的我还想看看这个地址，没准是pdf地址呢</strong></p>
-</li>
-<li><p><strong>9. 找到webview的内存地址，把这个webView的url打印出来</strong></p>
-</li>
-</ul>
+<blockquote>
+<p>8.很好，看到个WKWebView，凉了，这个时候基本可以断定，这个页面使用webView完成的，不死心的我还想看看这个地址，没准是pdf地址呢__</p>
+<p>9.找到webview的内存地址，把这个webView的url打印出来__</p>
+</blockquote>
 <p><img src="/assets/blogImg/jikeshijian3.png" alt="图片">     </p>
-<ul>
-<li><strong>10. #0x16689c00.URL.absoluteString 打印出来了 “<a href="https://time.geekbang.org/column/article/85326?device=geekTime.ios" target="_blank" rel="external">https://time.geekbang.org/column/article/85326?device=geekTime.ios</a>“</strong></li>
-</ul>
+<blockquote>
+<p>10.#0x16689c00.URL.absoluteString 打印出来了 “<a href="https://time.geekbang.org/column/article/85326?device=geekTime.ios&quot;__" target="_blank" rel="external">https://time.geekbang.org/column/article/85326?device=geekTime.ios&quot;__</a></p>
+</blockquote>
 <p><img src="/assets/blogImg/jikeshijian4.png" alt="图片">     </p>
-<ul>
-<li><strong>11. 手动微笑脸，拜拜，有知道中午的老哥是怎么拿到资源的，请告诉我下谢谢</strong></li>
-</ul>
-<p>(中间还对app进行脱壳操作，头文件都导出来了，你给我看这个？！)</p>
-
+<blockquote>
+<p>11.手动微笑脸，拜拜，有知道中午的老哥是怎么拿到资源的，请告诉我下谢谢__</p>
+</blockquote>
+<h3 id="都脱壳了，头文件都导出来了，你给我看这个？！"><a href="#都脱壳了，头文件都导出来了，你给我看这个？！" class="headerlink" title="(都脱壳了，头文件都导出来了，你给我看这个？！)"></a>(都脱壳了，头文件都导出来了，你给我看这个？！)</h3>
         
     
 

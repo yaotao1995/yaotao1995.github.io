@@ -56,14 +56,11 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="【脱壳工具】
-
+    <meta name="description" itemprop="description" content="脱壳工具
 这里只讲两种脱壳工具的使用
 前提条件：知道什么是壳
 目的就是使用脱壳工具拿到我们想要的可执行文件
-
-
-     ">
+">
     <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
@@ -239,19 +236,16 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="逆向记录篇-脱壳工具 | YaoTao&#39;sBlog">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="【脱壳工具】
-
+    <meta property="og:description" content="脱壳工具
 这里只讲两种脱壳工具的使用
 前提条件：知道什么是壳
 目的就是使用脱壳工具拿到我们想要的可执行文件
-
-
-     ">
+">
     
 
     
         <meta property="article:published_time" content="Fri Aug 03 2018 10:53:28 GMT+0800">
-        <meta property="article:modified_time" content="Tue Mar 05 2019 11:05:00 GMT+0800">
+        <meta property="article:modified_time" content="Sat May 18 2019 02:53:09 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +268,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/08/03/逆向记录篇-脱壳工具/index.html",
     "headline": "逆向记录篇-脱壳工具",
     "datePublished": "Fri Aug 03 2018 10:53:28 GMT+0800",
-    "dateModified": "Tue Mar 05 2019 11:05:00 GMT+0800",
+    "dateModified": "Sat May 18 2019 02:53:09 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "July",
@@ -293,14 +287,11 @@
         }
     },
     "keywords": "",
-    "description": "【脱壳工具】
-
+    "description": "脱壳工具
 这里只讲两种脱壳工具的使用
 前提条件：知道什么是壳
 目的就是使用脱壳工具拿到我们想要的可执行文件
-
-
-     ",
+",
 }
 </script>
 
@@ -358,6 +349,15 @@
 
     <!-- Left aligned menu below button -->
     
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#脱壳工具"><span class="post-toc-number">1.</span> <span class="post-toc-text">脱壳工具</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、Clutch"><span class="post-toc-number">2.</span> <span class="post-toc-text">一、Clutch</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、dumpdecrypted"><span class="post-toc-number">3.</span> <span class="post-toc-text">二、dumpdecrypted</span></a></li></ol>
+    </ul>
     
 
 
@@ -491,17 +491,15 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><strong>【脱壳工具】</strong></p>
-<ul>
+        <h2 id="脱壳工具"><a href="#脱壳工具" class="headerlink" title="脱壳工具"></a>脱壳工具</h2><ul>
 <li>这里只讲两种脱壳工具的使用</li>
 <li>前提条件：知道什么是壳</li>
 <li>目的就是使用脱壳工具拿到我们想要的可执行文件</li>
 </ul>
-<hr>
-<p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
 <a id="more"></a>
-<p><strong>【一、Clutch】</strong></p>
-<p>这个砸壳工具相对来说比较简单，</p>
+<h2 id="一、Clutch"><a href="#一、Clutch" class="headerlink" title="一、Clutch"></a>一、Clutch</h2><ul>
+<li>这个砸壳工具相对来说比较简单，</li>
+</ul>
 <blockquote>
 <p><a href="https://github.com/KJCracks/Clutch/releases" target="_blank" rel="external">https://github.com/KJCracks/Clutch/releases</a></p>
 </blockquote>
@@ -512,17 +510,22 @@
 <p>5.Clutch -d 1 （命令格式是 Clutch -d + app编号）</p>
 <p>6.脱壳完毕会输出脱壳后的地址，找到它，使用iFunBox或者scp拷贝出来 </p>
 <p><img src="/assets/blogImg/20180803img1.png" alt="图片">     </p>
-<p><strong>【二、dumpdecrypted】</strong></p>
-<p>可以看下这位老哥的详细解说（渣渣都是看他们的帖子才能维持生活）:</p>
+<h2 id="二、dumpdecrypted"><a href="#二、dumpdecrypted" class="headerlink" title="二、dumpdecrypted"></a>二、dumpdecrypted</h2><ul>
+<li><p>可以看下这位老哥的详细解说（都是看他们的帖子才能维持生活）:</p>
 <blockquote>
 <p><a href="http://bbs.iosre.com/t/dumpdecrypted-app/22" target="_blank" rel="external">http://bbs.iosre.com/t/dumpdecrypted-app/22</a></p>
 </blockquote>
-<p>工具可以到github下载：</p>
+</li>
+<li><p>工具可以到github下载：</p>
 <blockquote>
 <p><a href="https://github.com/stefanesser/dumpdecrypted.git" target="_blank" rel="external">https://github.com/stefanesser/dumpdecrypted.git</a></p>
 </blockquote>
-<p>1.命令行到对应的下载目录下执行make，下载过来的文件夹会有makefile文件，执行过后会生成dumpdecrypted.dylib<br><br>2.执行过后生成的脱壳文件并能直接使用，需要使用：(1).security find-identity -v -p codesigning (2).codesign –force –verify –verbose –sign “iPhone Developer:” dumpdecrypted.dylib 两条命令，第一条查看哪些可用来签名，第二条对dumpdecrypted.dylibg工具重签名<br><br>3.将动态库文件拷贝到 /var/root 里面<br><br>4.使用ps -A 命令查看当前运行的程序，并且找到想要脱壳的程序（例如：一大串地址/TargetApp）<br><br>5.配合 cycript -p TargetApp 进到app，再使用[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0]，查看欲脱壳程序的位置<br><br>5.执行：DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/containers/Bundle/Application/60440AF2-FCE6-49F8-9D79-376D98A6DCBC/Starbucks.app/TargetApp ，/var/cont… 这部分为查找到的程序路径<br><br>6.当前文件夹下会生成“TargetApp.decrypted”，这个就是脱壳后的可执行文件</p>
-<p>接下去想怎么玩怎么玩。。。</p>
+<p>1.命令行到对应的下载目录下执行make，下载过来的文件夹会有makefile文件，执行过后会生成dumpdecrypted.dylib<br><br>2.执行过后生成的脱壳文件并能直接使用，需要使用：(1).security find-identity -v -p codesigning (2).codesign –force –verify –verbose –sign “iPhone Developer:” dumpdecrypted.dylib 两条命令，第一条查看哪些可用来签名，第二条对dumpdecrypted.dylibg工具重签名<br><br>3.将动态库文件拷贝到 /var/root 里面<br><br>4.使用ps -A 命令查看当前运行的程序，并且找到想要脱壳的程序（例如：一大串地址/TargetApp）<br><br>5.配合 cycript -p TargetApp 进到app，再使用[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0]，查看欲脱壳程序的位置<br><br>6.执行：DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/containers/Bundle/Application/60440AF2-FCE6-49F8-9D79-376D98A6DCBC/Starbucks.app/TargetApp ，/var/cont… 这部分为查找到的程序路径<br><br>7.当前文件夹下会生成“TargetApp.decrypted”，这个就是脱壳后的可执行文件</p>
+</li>
+</ul>
+<blockquote>
+<p> 接下去想怎么玩怎么玩。。。</p>
+</blockquote>
 
         
     

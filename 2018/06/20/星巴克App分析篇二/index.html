@@ -56,13 +56,7 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="【日常】
-
-废不多说直接开始
-工具：一台mac，破解版的Reveal，一台越狱的手机
-
-
-">
+    <meta name="description" itemprop="description" content="">
     <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
@@ -238,18 +232,12 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="使用Reveal星巴克AppUI | YaoTao&#39;sBlog">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="【日常】
-
-废不多说直接开始
-工具：一台mac，破解版的Reveal，一台越狱的手机
-
-
-">
+    <meta property="og:description" content="">
     
 
     
         <meta property="article:published_time" content="Wed Jun 20 2018 20:23:00 GMT+0800">
-        <meta property="article:modified_time" content="Wed Dec 19 2018 11:27:24 GMT+0800">
+        <meta property="article:modified_time" content="Sat May 18 2019 10:00:43 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -272,7 +260,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/06/20/星巴克App分析篇二/index.html",
     "headline": "使用Reveal星巴克AppUI",
     "datePublished": "Wed Jun 20 2018 20:23:00 GMT+0800",
-    "dateModified": "Wed Dec 19 2018 11:27:24 GMT+0800",
+    "dateModified": "Sat May 18 2019 10:00:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "July",
@@ -291,13 +279,7 @@
         }
     },
     "keywords": "",
-    "description": "【日常】
-
-废不多说直接开始
-工具：一台mac，破解版的Reveal，一台越狱的手机
-
-
-",
+    "description": "",
 }
 </script>
 
@@ -355,6 +337,15 @@
 
     <!-- Left aligned menu below button -->
     
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#日常"><span class="post-toc-number">1.</span> <span class="post-toc-text">日常</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reveal效果图"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Reveal效果图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck-SBCTabBar"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck.SBCTabBar</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三、重点区域是如下View开始的区域"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">三、重点区域是如下View开始的区域</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四、会发现这个页面主要分为几块内容"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">四、会发现这个页面主要分为几块内容</span></a></li></ol></li></ol></li></ol>
+    </ul>
     
 
 
@@ -488,50 +479,58 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><strong>【日常】</strong></p>
-<ul>
+        <h2 id="日常"><a href="#日常" class="headerlink" title="日常"></a>日常</h2><ul>
 <li>废不多说直接开始</li>
 <li>工具：一台mac，破解版的Reveal，一台越狱的手机</li>
 </ul>
 <hr>
+<h3 id="Reveal效果图"><a href="#Reveal效果图" class="headerlink" title="Reveal效果图"></a>Reveal效果图</h3><ul>
+<li><p>使用越狱手机配合Reveal查看appstore下载过来的app在上一篇已经讲过了，这里直接开始分析篇</p>
 <div align="center"><br><img src="/assets/blogImg/reveal_fx5.png" alt="图片"><br></div>
+</li>
+<li><p>声明一下，哪怕是逆向app，我们能拿到的只能是app的头文件，编译之后的可执行文件是无法反编译成oc  swift代码的，只能通过Hopper等工具反编译成汇编代码以及伪代码</p>
+</li>
+<li>Reveal查看UI对我们分析App有很大的帮助</li>
+</ul>
+<h4 id="一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的"><a href="#一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的" class="headerlink" title="一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的"></a>一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的</h4><ul>
+<li>重点分析第一个window先<div align="center"><br><img src="/assets/blogImg/20180620img1.png" alt="图片"><br></div>
 
-<a id="more"></a>
-<p>使用越狱手机配合Reveal查看appstore下载过来的app在上一篇已经讲过了，这里直接开始分析篇</p>
-<p>声明一下，哪怕是逆向app，我们能拿到的只能是app的头文件，编译之后的可执行文件是无法反编译成oc  swift代码的，至少目前还不能做到，简单来说我们能做的就是对这个UI进行查看分析，并不能直接拿到源代码进行分析</p>
-<p>一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的</p>
-<p>-重点分析第一个window先</p>
-<div align="center"><br><img src="/assets/blogImg/20180620img1.png" alt="图片"><br></div>
-
+</li>
+</ul>
 <div align="center"><br><img src="/assets/blogImg/20180620img2.png" alt="图片"><br></div>
 
 
-<p>如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck.SBCTabBar<br>UITransitionView：主界面区域<br>Starbuck.SBCTabBar：底部导航栏<br>国际惯例 没有什么特别的地方</p>
+<h4 id="二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck-SBCTabBar"><a href="#二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck-SBCTabBar" class="headerlink" title="二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck.SBCTabBar"></a>二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck.SBCTabBar</h4><ul>
+<li>UITransitionView：主界面区域</li>
+<li>Starbuck.SBCTabBar：底部导航栏</li>
+<li>国际惯例 没有什么特别的地方</li>
+</ul>
 <div align="center"><br><img src="/assets/blogImg/20180620img4.png" alt="图片"><br></div>
 
-<p>重点区域是如下View开始的区域</p>
-<div align="center"><br><img src="/assets/blogImg/20180620img5.png" alt="图片"><br></div>
+<h4 id="三、重点区域是如下View开始的区域"><a href="#三、重点区域是如下View开始的区域" class="headerlink" title="三、重点区域是如下View开始的区域"></a>三、重点区域是如下View开始的区域</h4><div align="center"><br><img src="/assets/blogImg/20180620img5.png" alt="图片"><br></div>
 
 <div align="center"><br><img src="/assets/blogImg/20180620img6.png" alt="图片"><br></div>
 
 
 <div align="center"><br><img src="/assets/blogImg/20180620img7.png" alt="图片"><br></div>
 
-
 <div align="center"><br><img src="/assets/blogImg/20180620img8.png" alt="图片"><br></div>
 
-
-
-
-<p>我们会发现这个页面主要分为几块内容<br>1.UIScrollView 主题的滑动部分 从”星享俱乐部”开始的滑动区域<br>2.”下午好”这块富文本显示区域，不同时间，实现显示不同的图文混排内容<br>3.”星消息” 区域，点击跳转到一个消息页面，并且这块view实现了tableView内Section的HeaderView的悬停功能<br>4.自定义的”登录注册”按钮</p>
-<p>首先，我们将页面上滑，顶部两个View会根据下方scrollView的上移而上移，这里会碰到什么样的问题<br>1.手势问题，我们知道了”星消息”和”下午好”两个View并非scrollView内的View，那么要实现，两个view同时和scrollView向上滑动就要实现一个手势，让三个View的Top跟着一起上移，这个时候就要需要考虑到这个手势和scrollView上滑手势的区分问题：</p>
-<p>我的想法（未实践）：重写- (BOOL)gestureRecognizer:(UIGestureRecognizer <em>)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer </em>)otherGestureRecognizer {  }方法<br>在这里进行判断并且拦截，条件是view是否到了顶部是否可以滑动scrollView</p>
+<h4 id="四、会发现这个页面主要分为几块内容"><a href="#四、会发现这个页面主要分为几块内容" class="headerlink" title="四、会发现这个页面主要分为几块内容"></a>四、会发现这个页面主要分为几块内容</h4><blockquote>
+<p>1.UIScrollView 主题的滑动部分 从”星享俱乐部”开始的滑动区域<br> 2.”下午好”这块富文本显示区域，不同时间，实现显示不同的图文混排内容<br> 3.”星消息” 区域，点击跳转到一个消息页面，并且这块view实现了tableView内Section的HeaderView的悬停功能<br> 4.自定义的”登录注册”按钮</p>
+</blockquote>
+<ul>
+<li>首先，我们将页面上滑，顶部两个View会根据下方scrollView的上移而上移，这里会碰到什么样的问题<blockquote>
+<p>1.手势问题，我们知道了”星消息”和”下午好”两个View并非scrollView内的View，那么要实现，两个view同时和scrollView向上滑动就要实现一个手势，让三个View的Top跟着一起上移，这个时候就要需要考虑到这个手势和scrollView上滑手势的区分问题：</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>我的想法（未实践）：重写- (BOOL)gestureRecognizer:(UIGestureRecognizer <em>)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer </em>)otherGestureRecognizer {  }方法<br> 在这里进行判断并且拦截，条件是view是否到了顶部是否可以滑动scrollView</p>
 <p>2.”星消息”View的悬停问题：设置最高和最低的值，保证在向上或者向下运动的时候停止</p>
+</blockquote>
 <div align="center"><br><img src="/assets/blogImg/20180620img9.png" alt="图片"><br></div>
 
-
-<pre><code>未完待续。。。
-</code></pre>
         
     
 
