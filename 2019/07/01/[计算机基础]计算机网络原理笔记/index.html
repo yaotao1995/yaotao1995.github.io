@@ -46,7 +46,7 @@
     
     <title>
         
-            归档: 2017/8 | 
+            《计算机网络原理笔记》 | 
         
         YaoTao&#39;sBlog
     </title>
@@ -213,7 +213,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="YaoTao&#39;sBlog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/archives/2017/08/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2019/07/01/[计算机基础]计算机网络原理笔记/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="YaoTao&#39;sBlog">
@@ -228,13 +228,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/archives/2017/08/">
+    <meta property="og:url" content="http://yoursite.com/2019/07/01/[计算机基础]计算机网络原理笔记/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/8 | YaoTao&#39;sBlog">
+    <meta property="og:title" content="《计算机网络原理笔记》 | YaoTao&#39;sBlog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
+    
+        <meta property="article:published_time" content="Mon Jul 01 2019 13:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 17 2019 08:58:34 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -242,13 +245,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/08/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2019/07/01/[计算机基础]计算机网络原理笔记/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/07/01/[计算机基础]计算机网络原理笔记/index.html",
+    "headline": "《计算机网络原理笔记》",
+    "datePublished": "Mon Jul 01 2019 13:00:00 GMT+0800",
+    "dateModified": "Sat Aug 17 2019 08:58:34 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "July",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "one piece 点击有惊喜"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "YaoTao&#39;sBlog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -282,220 +315,257 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、计算机网络概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、计算机网络概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第一节-计算机网络的基本概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一节 计算机网络的基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、计算机网络的定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">一、计算机网络的定义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、协议的定义"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">二、协议的定义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三、计算机网络的功能"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">三、计算机网络的功能</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#四、计算机网络分类"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">四、计算机网络分类</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第二节、计算机网络结构"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第二节、计算机网络结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、网络边缘"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">一、网络边缘</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、接入网络"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">二、接入网络</span></a></li></ol></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/20/[数据结构与算法]基本算法/">基本算法 | 数据结构与算法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            【数据结构与算法】
-
-简单的算法还是挺重要的，对于萌新来讲，最近的就是面试的时候就会用到·····
-
-
-     
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/20/[数据结构与算法]基本算法/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="July's avatar">
-            </div>
-            <div>
-                <strong>July</strong>
-                <span>8月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/18/[编程思想]递归/">递归 | 数据结构与算法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            【数据结构与算法】
-
-今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念
-
-
-     
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/18/[编程思想]递归/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="July's avatar">
-            </div>
-            <div>
-                <strong>July</strong>
-                <span>8月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/16/[iOS]使用RumTime机制简单视线数据归解档/">使用RumTime机制简单实现数据归解档 | iOS</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            【Ios】
-
-就是懒，不想每次有新数据添加的时候，都要进行归档解档操作
-
-
-     
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/16/[iOS]使用RumTime机制简单视线数据归解档/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="July's avatar">
-            </div>
-            <div>
-                <strong>July</strong>
-                <span>8月 16, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                《计算机网络原理笔记》
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>July</strong>
+        <span>7月 01, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《计算机网络原理笔记》&url=http://yoursite.com/2019/07/01/[计算机基础]计算机网络原理笔记/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=《计算机网络原理笔记》&url=http://yoursite.com/2019/07/01/[计算机基础]计算机网络原理笔记/index.html&via=July" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/07/01/[计算机基础]计算机网络原理笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/07/01/[计算机基础]计算机网络原理笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>该笔记用于记录各章节重要的一些内容，最后真题练习再修缮</p>
+</blockquote>
+<h3 id="一、计算机网络概述"><a href="#一、计算机网络概述" class="headerlink" title="一、计算机网络概述"></a>一、计算机网络概述</h3><h4 id="第一节-计算机网络的基本概念"><a href="#第一节-计算机网络的基本概念" class="headerlink" title="第一节 计算机网络的基本概念"></a>第一节 计算机网络的基本概念</h4><h5 id="一、计算机网络的定义"><a href="#一、计算机网络的定义" class="headerlink" title="一、计算机网络的定义"></a>一、计算机网络的定义</h5><blockquote>
+<p> 计算机网络是互连的、自治的计算机的集合。（并没有统一的精确定义）</p>
+<ul>
+<li>1.自治表示互联的计算机系统是独立的，不存在主从关系</li>
+<li>2.互联是指利用通信链路连接相互独立的计算机系统</li>
+<li>3.通信链路可以是双绞线、光纤、微波、通信卫星等</li>
+<li>4.目前应用最广泛的计算机网络是internet 因特网</li>
+</ul>
+</blockquote>
+<h5 id="二、协议的定义"><a href="#二、协议的定义" class="headerlink" title="二、协议的定义"></a>二、协议的定义</h5><blockquote>
+<p>协议是网络通信实体之间在数据交换过程中需要遵循的规则或者约定，是计算机网络有序运行的重要保证</p>
+<ul>
+<li>1.协议约定了实体之间交换的信息类型、信息各部分的含义、信息交换的顺序以及收到特定信息或者出现异常采取的行为</li>
+<li>2.协议三个基本要素：语法（syntax）、语义（semantics）、时序（timing）</li>
+<li>3.语法：实体交换信息的格式与结构、或者定义实体之间传输信号的电平</li>
+<li>4.语义：定义实体交换信息中需要发送的控制信息。有的协议需要进行差错检测，那么就需要附加差错编码的控制信息，则需要定义采用何种差错编码，以及采取何种差错处理机制等</li>
+<li>5.时序：也称同步，定义实体之间交换信息等顺序以及如何匹配和适应彼此的速度</li>
+</ul>
+</blockquote>
+<h5 id="三、计算机网络的功能"><a href="#三、计算机网络的功能" class="headerlink" title="三、计算机网络的功能"></a>三、计算机网络的功能</h5><blockquote>
+<p>计算机网络的功能是不同主机之间实现快速的信息交换<br>实现资源共享这一核心功能，包括：硬件i资源共享、软件资源共享、和信息资源共享</p>
+</blockquote>
+<ul>
+<li>1.硬件资源共享：通过计算机网络，一台主机可以共享使用另一台主机的硬件资源，包括计算机资源（cpu），存储资源，打印机和扫描仪等iO设备。（云存储、云计算可以提供硬件计算资源和硬件存储资源，是典型资源共享的实例）</li>
+<li>2.软件资源共享：网络上的主机可以访问和使用服务器上的各类大型软件</li>
+<li>3.信息资源共享：网络已经成为获取信息的重要渠道。新闻阅读x、信息检索等等</li>
+</ul>
+<h5 id="四、计算机网络分类"><a href="#四、计算机网络分类" class="headerlink" title="四、计算机网络分类"></a>四、计算机网络分类</h5><blockquote>
+<p>计算机网络经过半个世纪的发展，提出或建设了很多类型的网络</p>
+</blockquote>
+<ul>
+<li><p>按覆盖范围分类<br>  1.个域网，随便携式设备g发展提出来的网络类型，覆盖范围1～10m<br>  2.局域网，通常在办公室、办公楼、校园等，用过高速有线或者无线连接主机，实现高速的数据传输，覆盖范围10m ~ 1km<br>  3.城域网，覆盖城市的网络，范围 5 ~ 50km<br>  4.广域网，范围几十到几千千米，可以跨城域</p>
+</li>
+<li><p>拓扑结构分类<br>  1.星型拓扑结构，包括一个中央节点，网络中所有的主机通过点对点通信链路链接这个中央节点，多见于局域网，个域网<br>  2.总线型拓扑结构，采用一条关闭信道作为传播介质，所有节点都和总线连接，存在的问题：同时共享信道数据的时候会冲突；优点：结构简单电缆数量少，易于扩展；缺点就是通信范围受限，故障诊断和隔离比较难，容易冲突<br>  3.环形拓扑结构（早期的局域网），利用所有的通信链路节点链接成一个环，优点：所需电缆长度短，易于避免冲突，；缺点：节点故障容易引起全面网络瘫痪，新节点加入或者撤出麻烦<br>  4.网状拓扑结构，通过多条链路和不同的节点链接，所有节点都有直接的链接称为完全网状拓扑结构，优点：可靠，节点故障其他网络可以继续通信；缺点: 造价高，网络结构复杂，选路由协议复杂<br>  5.树形拓扑结构，优点：容易扩展，故障容易隔离；缺点：根节点十分重要<br>  6.混合型拓扑结构，两种以上网路结构组合而成，优点: 易于扩展，可以构建不同的网络结构，缺点: 网络结构复杂，管理难度较高</p>
+</li>
+<li><p>按交换方式分类<br>  分为：电路交换，报文交换，分组交换</p>
+</li>
+<li><p>按网络用户属性分类<br>  1.公用网：国家或者企业出资建设，面向公众提供收费或者免费的网络<br>  2.私有网络，由某组织出资建设，面向专门的组织内部，不向公众开放的网络</p>
+</li>
+</ul>
+<h4 id="第二节、计算机网络结构"><a href="#第二节、计算机网络结构" class="headerlink" title="第二节、计算机网络结构"></a>第二节、计算机网络结构</h4><h5 id="一、网络边缘"><a href="#一、网络边缘" class="headerlink" title="一、网络边缘"></a>一、网络边缘</h5><p>连接到网络上的所有端系统构成网络边缘，网络边缘为网络用户提供了网络应用服务</p>
+<h5 id="二、接入网络"><a href="#二、接入网络" class="headerlink" title="二、接入网络"></a>二、接入网络</h5><p>接入网络是实现网络边缘的端系统与网络核心连接与接入的网络。</p>
+<ul>
+<li>常见的接入网络包括如下<br>1.电话拨号接入。早期覆盖广泛但是带宽底<br>2.非对称数字用户线路ADSL<br>3.混合光纤同轴电缆HFC接入网络</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/05/05/[日常]最近总结/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

@@ -46,7 +46,7 @@
     
     <title>
         
-            归档: 2017/8 | 
+            Reveal分析星巴克UI | iOS逆向 | 
         
         YaoTao&#39;sBlog
     </title>
@@ -213,7 +213,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="YaoTao&#39;sBlog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/archives/2017/08/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/06/20/[iOS逆向]星巴克App分析篇二/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="YaoTao&#39;sBlog">
@@ -228,13 +228,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/archives/2017/08/">
+    <meta property="og:url" content="http://yoursite.com/2018/06/20/[iOS逆向]星巴克App分析篇二/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/8 | YaoTao&#39;sBlog">
+    <meta property="og:title" content="Reveal分析星巴克UI | iOS逆向 | YaoTao&#39;sBlog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
+    
+        <meta property="article:published_time" content="Wed Jun 20 2018 20:23:00 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 17 2019 09:05:38 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -242,13 +245,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/08/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/06/20/[iOS逆向]星巴克App分析篇二/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/06/20/[iOS逆向]星巴克App分析篇二/index.html",
+    "headline": "Reveal分析星巴克UI | iOS逆向",
+    "datePublished": "Wed Jun 20 2018 20:23:00 GMT+0800",
+    "dateModified": "Sat Aug 17 2019 09:05:38 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "July",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "one piece 点击有惊喜"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "YaoTao&#39;sBlog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -282,220 +315,268 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#日常"><span class="post-toc-number">1.</span> <span class="post-toc-text">日常</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reveal效果图"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Reveal效果图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck-SBCTabBar"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck.SBCTabBar</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三、重点区域是如下View开始的区域"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">三、重点区域是如下View开始的区域</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四、会发现这个页面主要分为几块内容"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">四、会发现这个页面主要分为几块内容</span></a></li></ol></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/20/[数据结构与算法]基本算法/">基本算法 | 数据结构与算法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            【数据结构与算法】
-
-简单的算法还是挺重要的，对于萌新来讲，最近的就是面试的时候就会用到·····
-
-
-     
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/20/[数据结构与算法]基本算法/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="July's avatar">
-            </div>
-            <div>
-                <strong>July</strong>
-                <span>8月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/18/[编程思想]递归/">递归 | 数据结构与算法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            【数据结构与算法】
-
-今天在复习数据结构的时候想起来编程思想中的递归非常重要，就想着先复习下递归的概念
-
-
-     
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/18/[编程思想]递归/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="July's avatar">
-            </div>
-            <div>
-                <strong>July</strong>
-                <span>8月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/08/16/[iOS]使用RumTime机制简单视线数据归解档/">使用RumTime机制简单实现数据归解档 | iOS</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            【Ios】
-
-就是懒，不想每次有新数据添加的时候，都要进行归档解档操作
-
-
-     
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/08/16/[iOS]使用RumTime机制简单视线数据归解档/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="July's avatar">
-            </div>
-            <div>
-                <strong>July</strong>
-                <span>8月 16, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Reveal分析星巴克UI | iOS逆向
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>July</strong>
+        <span>6月 20, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Reveal分析星巴克UI | iOS逆向&url=http://yoursite.com/2018/06/20/[iOS逆向]星巴克App分析篇二/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Reveal分析星巴克UI | iOS逆向&url=http://yoursite.com/2018/06/20/[iOS逆向]星巴克App分析篇二/index.html&via=July" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/20/[iOS逆向]星巴克App分析篇二/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/20/[iOS逆向]星巴克App分析篇二/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="日常"><a href="#日常" class="headerlink" title="日常"></a>日常</h2><ul>
+<li>废不多说直接开始</li>
+<li>工具：一台mac，破解版的Reveal，一台越狱的手机</li>
+</ul>
+<hr>
+<h3 id="Reveal效果图"><a href="#Reveal效果图" class="headerlink" title="Reveal效果图"></a>Reveal效果图</h3><ul>
+<li><p>使用越狱手机配合Reveal查看appstore下载过来的app在上一篇已经讲过了，这里直接开始分析篇</p>
+<div align="center"><br><img src="/assets/blogImg/reveal_fx5.png" alt="图片"><br></div>
+</li>
+<li><p>声明一下，哪怕是逆向app，我们能拿到的只能是app的头文件，编译之后的可执行文件是无法反编译成oc  swift代码的，只能通过Hopper等工具反编译成汇编代码以及伪代码</p>
+</li>
+<li>Reveal查看UI对我们分析App有很大的帮助</li>
+</ul>
+<h4 id="一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的"><a href="#一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的" class="headerlink" title="一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的"></a>一、打开之后我们会发现有两个window，第一个是主体window，第二个是覆盖在上面的顶层window，上面又一个绿色的圆圈，应该是用于需要浮窗在顶层的提示之类的</h4><ul>
+<li>重点分析第一个window先<div align="center"><br><img src="/assets/blogImg/20180620img1.png" alt="图片"><br></div>
+
+</li>
+</ul>
+<div align="center"><br><img src="/assets/blogImg/20180620img2.png" alt="图片"><br></div>
+
+
+<h4 id="二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck-SBCTabBar"><a href="#二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck-SBCTabBar" class="headerlink" title="二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck.SBCTabBar"></a>二、如下图：我们会发现window下第一个主控制View，UILayoutContainerView，里面包含了：UITransitionView以及Starbuck.SBCTabBar</h4><ul>
+<li>UITransitionView：主界面区域</li>
+<li>Starbuck.SBCTabBar：底部导航栏</li>
+<li>国际惯例 没有什么特别的地方</li>
+</ul>
+<div align="center"><br><img src="/assets/blogImg/20180620img4.png" alt="图片"><br></div>
+
+<h4 id="三、重点区域是如下View开始的区域"><a href="#三、重点区域是如下View开始的区域" class="headerlink" title="三、重点区域是如下View开始的区域"></a>三、重点区域是如下View开始的区域</h4><div align="center"><br><img src="/assets/blogImg/20180620img5.png" alt="图片"><br></div>
+
+<div align="center"><br><img src="/assets/blogImg/20180620img6.png" alt="图片"><br></div>
+
+
+<div align="center"><br><img src="/assets/blogImg/20180620img7.png" alt="图片"><br></div>
+
+<div align="center"><br><img src="/assets/blogImg/20180620img8.png" alt="图片"><br></div>
+
+<h4 id="四、会发现这个页面主要分为几块内容"><a href="#四、会发现这个页面主要分为几块内容" class="headerlink" title="四、会发现这个页面主要分为几块内容"></a>四、会发现这个页面主要分为几块内容</h4><blockquote>
+<p>1.UIScrollView 主题的滑动部分 从”星享俱乐部”开始的滑动区域<br> 2.”下午好”这块富文本显示区域，不同时间，实现显示不同的图文混排内容<br> 3.”星消息” 区域，点击跳转到一个消息页面，并且这块view实现了tableView内Section的HeaderView的悬停功能<br> 4.自定义的”登录注册”按钮</p>
+</blockquote>
+<ul>
+<li>首先，我们将页面上滑，顶部两个View会根据下方scrollView的上移而上移，这里会碰到什么样的问题<blockquote>
+<p>1.手势问题，我们知道了”星消息”和”下午好”两个View并非scrollView内的View，那么要实现，两个view同时和scrollView向上滑动就要实现一个手势，让三个View的Top跟着一起上移，这个时候就要需要考虑到这个手势和scrollView上滑手势的区分问题：</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>我的想法（未实践）：重写- (BOOL)gestureRecognizer:(UIGestureRecognizer <em>)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer </em>)otherGestureRecognizer {  }方法<br> 在这里进行判断并且拦截，条件是view是否到了顶部是否可以滑动scrollView</p>
+<p>2.”星消息”View的悬停问题：设置最高和最低的值，保证在向上或者向下运动的时候停止</p>
+</blockquote>
+<div align="center"><br><img src="/assets/blogImg/20180620img9.png" alt="图片"><br></div>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/07/04/[算法]LeetCode刷题1,2/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/06/10/[iOS逆向]Reveal简单使用/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
