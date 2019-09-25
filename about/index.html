@@ -414,48 +414,18 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h2 id="姚涛"><a href="#姚涛" class="headerlink" title="姚涛"></a>姚涛</h2><ul>
-<li>手机：17606573496</li>
-<li>QQ / 邮箱：1007881775</li>
-<li>15年12月入的iOS坑至今 | 3年</li>
+<li>15年7月毕业入坑iOS</li>
 <li>宁波职业技术学院 - 计算机应用技术 - 大专</li>
-<li>目前所在地：杭州 | 期望地点：杭州 | 期望薪资：13k+</li>
-<li>逆向: 了解  |  RN: 了解  |  小程序: 了解</li>
+<li>目前所在地：杭州 | 期望地点：杭州 | 期望薪资：12k+</li>
+<li>Golang后台  |  iOS   |  Android  |  小程序  |  逆向iOS  |   RN:（了解） </li>
 <li>证书：JAVA软件工程师 | 计算机网络管理员 | 电子计算机调试工 | 二维CAD绘图</li>
 <li><a href="https://github.com/yaotao1995" target="_blank">GitHub</a> | <a href="mailto:1007881775@qq.com" target="_blank">邮箱</a></li>
+<li>QQ / 邮箱：1007881775    |   手机：17606573496</li>
 </ul>
-<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><h2 id="逆向iOS"><a href="#逆向iOS" class="headerlink" title="逆向iOS"></a>逆向iOS</h2><blockquote>
-<p>工具：越狱手机 | Mac电脑 | Reveal | iFunBox | debugsever | lldb | script | ssh | Hopper | theos</p>
-</blockquote>
-<h4 id="一、微信添加自动抢红包功能"><a href="#一、微信添加自动抢红包功能" class="headerlink" title="一、微信添加自动抢红包功能"></a>一、微信添加自动抢红包功能</h4><ul>
-<li>简述：起初是想简单实现微信自动抢红包功能也就是手动触发红包消息的点击；后使用debugsever和lldb动态调试，找到红包接收消息的函数以及发送抢红包的函数；</li>
-<li>所以有了方案1：正常手动触发点击事件 ，方案2：红包接收函数一但检测到红包进来直接根据参数，调用发送打开红包函数，</li>
-<li><p>优劣： 方案1简单甚至不需要动态调试，方案2：效率，根本不需要打开红包页面</p>
-</li>
-<li><p>碰到问题： 调试过程会出现封号（手动狗头），温馨提示，在不百分百确定参数名参数值时候请不要随意调试发送红包函数</p>
-<h5 id="方案1-过程"><a href="#方案1-过程" class="headerlink" title="方案1 过程"></a>方案1 过程</h5><ul>
-<li>1.找到appleid并且修改Relealplist</li>
-<li>2.打开微信聊天界面，小号发红包，打开Reveal，查看红包消息的类</li>
-<li>3.砸壳并且导出头文件</li>
-<li>4.创建tweak</li>
-<li>5.找到对应类</li>
-<li>6.手动触发，红包页面有个点击的按钮</li>
-<li>…</li>
-</ul>
-<h5 id="方案2-过程"><a href="#方案2-过程" class="headerlink" title="方案2 过程"></a>方案2 过程</h5><ul>
-<li>重点：dubsever配合lldb 动态调试，页面函数都打印，然后开小号发送红包，看看控制台打印了哪几个函数，筛选，再测，最后找到红包接收函数，接着同样找到发送函数，至此两个函数找到，！！！！不急！！！！重点提示，不要随意调用发送函数，会封号</li>
-<li><p>动态调试将所需参数以及值打印 ， 再去调用发送函数 </p>
-<h5 id="总结：选方案2毋庸置疑"><a href="#总结：选方案2毋庸置疑" class="headerlink" title="总结：选方案2毋庸置疑"></a>总结：选方案2毋庸置疑</h5></li>
-</ul>
-<h4 id="二、优酷去掉广告"><a href="#二、优酷去掉广告" class="headerlink" title="二、优酷去掉广告"></a>二、优酷去掉广告</h4><ul>
-<li>简述：优酷视频iOS端去掉广告</li>
-<li>遗留：6分钟试看视频，去掉了广告但是6分钟限制还在，有时间再搞</li>
-</ul>
-<h4 id="等··"><a href="#等··" class="headerlink" title="等··"></a>等··</h4></li>
-</ul>
-<h2 id="iOS项目"><a href="#iOS项目" class="headerlink" title="iOS项目"></a>iOS项目</h2><h4 id="一、互惠金服"><a href="#一、互惠金服" class="headerlink" title="一、互惠金服"></a>一、互惠金服</h4><ul>
+<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><h2 id="iOS项目"><a href="#iOS项目" class="headerlink" title="iOS项目"></a>iOS项目</h2><h4 id="一、互惠金服"><a href="#一、互惠金服" class="headerlink" title="一、互惠金服"></a>一、互惠金服</h4><ul>
 <li>性质：P2P投资类App</li>
 <li>职责：iOS端负责人，独立开发到上架</li>
-<li>主要内容：1. 开发过程中pods负责管理三方；2. 在AFNetWorking基础上封装一个管理者，其中包括网络状态的监测，公共请求接口等主要解决易读高复用的网络请求；3. 利用Masonry相对布局框架布局，整个项目的布局全用代码实现；4. 项目需要添加刻度尺，drawRect绘制的尺子配合scrollView 达到刻度尺效果，同时配合scrollView代理回调刻度尺位置；5. 项目需要使用UICollectionView自定义日历控件；6. 等等..</li>
+<li>主要内容：1. 开发过程中pods负责管理三方；2. 在AFNetWorking基础上封装一个管理者，其中包括网络状态的监测，公共请求接口等主要解决易读高复用的网络请求；3. 利用Masonry相对布局框架布局，整个项目的布局全用代码实现；4. 项目需要添加刻度尺，drawRect绘制的尺子配合scrollView 达到刻度尺效果，同时配合scrollView代理回调刻度尺位置；5. 项目需要使用UICollectionView自定义日历控件；6. 等..</li>
 <li>性能优化：1. 启动优化：去掉了用不到的类，用不到三方，相同功能扩展合并掉了；2. 帧率优化，使用Rendering工具查看像素标红，通过监听runloop的阶段之间的持续时间来判断是否卡顿；3. 使用Leaks以及MLeaksFinder三方查找并处理循环引用</li>
 <li>安全问题：1. 敏感数据采用md5配合自定义字段加密，用户登录密码，金额等；2. 方法名混淆 ； 3. WebView防止中间人攻击，使用的AFNetWorking证书校验</li>
 <li>项目难点：上架 </li>
@@ -474,7 +444,28 @@
 <li>项目难点：选座购票问题</li>
 <li>难点解决：模仿猫眼选座功能实现，大的ScrollView排放Btn达到座位效果，选座 - 点击按钮，其中包括座位不规则，有过道等问题</li>
 </ul>
-<h4 id="等··-1"><a href="#等··-1" class="headerlink" title="等··"></a>等··</h4><h2 id="小程序项目"><a href="#小程序项目" class="headerlink" title="小程序项目"></a>小程序项目</h2><h4 id="理财Demo"><a href="#理财Demo" class="headerlink" title="理财Demo"></a>理财Demo</h4><ul>
+<h4 id="四、其他项目"><a href="#四、其他项目" class="headerlink" title="四、其他项目"></a>四、其他项目</h4><ul>
+<li>牛花花（独立）、小富翁（独立）、惠集（维护）、爱运动（独立）、锦行财富（商城，部分模块）、工程项目管理系统。。。</li>
+</ul>
+<h2 id="Golang后台"><a href="#Golang后台" class="headerlink" title="Golang后台"></a>Golang后台</h2><h4 id="1-汽车金融3-0"><a href="#1-汽车金融3-0" class="headerlink" title="1.汽车金融3.0"></a>1.汽车金融3.0</h4><ul>
+<li>职责：部分模块以及页面</li>
+<li>主要内容：<br>  1.合同模块，合同的生成、自动盖章、打包下载，<br>  2.短信发送，3.三方代扣绑卡，<br>  3.用户的增删改</li>
+</ul>
+<h2 id="Android项目"><a href="#Android项目" class="headerlink" title="Android项目"></a>Android项目</h2><h4 id="互惠金服老项目"><a href="#互惠金服老项目" class="headerlink" title="互惠金服老项目"></a>互惠金服老项目</h4><ul>
+<li>职责：维护，打包、上架、日常修改（UI，接口）</li>
+</ul>
+<h2 id="逆向iOS"><a href="#逆向iOS" class="headerlink" title="逆向iOS"></a>逆向iOS</h2><h4 id="1-微信自动抢红包"><a href="#1-微信自动抢红包" class="headerlink" title="1.微信自动抢红包"></a>1.微信自动抢红包</h4><ul>
+<li>主要内容：编写微信插件，微信自动抢红包</li>
+</ul>
+<h4 id="2-优酷去掉广告"><a href="#2-优酷去掉广告" class="headerlink" title="2.优酷去掉广告"></a>2.优酷去掉广告</h4><ul>
+<li>主要内容：优酷去广告</li>
+</ul>
+<h4 id="3-等。。。"><a href="#3-等。。。" class="headerlink" title="3.等。。。"></a>3.等。。。</h4><h2 id="小程序项目"><a href="#小程序项目" class="headerlink" title="小程序项目"></a>小程序项目</h2><h4 id="天摇系统"><a href="#天摇系统" class="headerlink" title="天摇系统"></a>天摇系统</h4><ul>
+<li>性质：门店业务员线下资料上传</li>
+<li>职责：负责账号申请、代码编写、Golang后台接口、上架</li>
+<li>主要内容：图片等资料提交保存，身份证、驾驶证等识别校验</li>
+</ul>
+<h4 id="理财Demo"><a href="#理财Demo" class="headerlink" title="理财Demo"></a>理财Demo</h4><ul>
 <li>性质：模仿互惠金服APP</li>
 <li>职责：独立开发（未写完）</li>
 </ul>
@@ -601,7 +592,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
