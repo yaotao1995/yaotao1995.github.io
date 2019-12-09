@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            笔记 | iOS | 
+        
+        YaoTao&#39;sBlog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="序
+记录iOS知识点
+">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="YaoTao&#39;sBlog">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2019/10/30/[iOS]笔记/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YaoTao&#39;sBlog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2019/10/30/[iOS]笔记/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="笔记 | iOS | YaoTao&#39;sBlog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="序
+记录iOS知识点
+">
+    
+
+    
+        <meta property="article:published_time" content="Wed Oct 30 2019 16:15:28 GMT+0800">
+        <meta property="article:modified_time" content="Fri Nov 15 2019 14:44:39 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/10/30/[iOS]笔记/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/10/30/[iOS]笔记/index.html",
+    "headline": "笔记 | iOS",
+    "datePublished": "Wed Oct 30 2019 16:15:28 GMT+0800",
+    "dateModified": "Fri Nov 15 2019 14:44:39 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "July",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "one piece 点击有惊喜"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "YaoTao&#39;sBlog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "序
+记录iOS知识点
+",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#序"><span class="post-toc-number">1.</span> <span class="post-toc-text">序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#App启动"><span class="post-toc-number">2.</span> <span class="post-toc-text">App启动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有无storyboard"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">有无storyboard</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-有"><span class="post-toc-number">2.0.1.1.</span> <span class="post-toc-text">1.有</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-无"><span class="post-toc-number">2.0.1.2.</span> <span class="post-toc-text">2.无</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#启动流程"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">启动流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-main函数执行前"><span class="post-toc-number">2.0.2.1.</span> <span class="post-toc-text">1.main函数执行前</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-main函数执行后"><span class="post-toc-number">2.0.2.2.</span> <span class="post-toc-text">2.main函数执行后</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-首屏渲染完成后"><span class="post-toc-number">2.0.2.3.</span> <span class="post-toc-text">3.首屏渲染完成后</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优化"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">优化!</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可执行文件-Mach-o"><span class="post-toc-number">3.</span> <span class="post-toc-text">可执行文件(Mach-o)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动态链接库"><span class="post-toc-number">4.</span> <span class="post-toc-text">动态链接库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Class原理"><span class="post-toc-number">5.</span> <span class="post-toc-text">Class原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#KVO"><span class="post-toc-number">6.</span> <span class="post-toc-text">KVO</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#KVC"><span class="post-toc-number">7.</span> <span class="post-toc-text">KVC</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Category"><span class="post-toc-number">8.</span> <span class="post-toc-text">Category</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AutoReleasePool"><span class="post-toc-number">9.</span> <span class="post-toc-text">AutoReleasePool</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#load方法"><span class="post-toc-number">10.</span> <span class="post-toc-text">+load方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#initialize方法"><span class="post-toc-number">11.</span> <span class="post-toc-text">+initialize方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#符号表"><span class="post-toc-number">12.</span> <span class="post-toc-text">符号表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ScrollView"><span class="post-toc-number">13.</span> <span class="post-toc-text">ScrollView</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#View、UIWindow、CALayer"><span class="post-toc-number">14.</span> <span class="post-toc-text">View、UIWindow、CALayer</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#frame-和-bounds"><span class="post-toc-number">15.</span> <span class="post-toc-text">frame 和 bounds</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关联对象ASSOCIATION"><span class="post-toc-number">16.</span> <span class="post-toc-text">关联对象ASSOCIATION</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Block"><span class="post-toc-number">17.</span> <span class="post-toc-text">Block</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Block捕获"><span class="post-toc-number">18.</span> <span class="post-toc-text">Block捕获</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#局部变量"><span class="post-toc-number">18.0.1.</span> <span class="post-toc-text">局部变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#全局变量"><span class="post-toc-number">18.0.2.</span> <span class="post-toc-text">全局变量</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Block类型"><span class="post-toc-number">19.</span> <span class="post-toc-text">Block类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#block修饰"><span class="post-toc-number">20.</span> <span class="post-toc-text">_block修饰</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                笔记 | iOS
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>July</strong>
+        <span>10月 30, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=笔记 | iOS&url=http://yoursite.com/2019/10/30/[iOS]笔记/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=笔记 | iOS&url=http://yoursite.com/2019/10/30/[iOS]笔记/index.html&via=July" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/30/[iOS]笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/30/[iOS]笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><blockquote>
+<p>记录iOS知识点</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="App启动"><a href="#App启动" class="headerlink" title="App启动"></a>App启动</h2><h4 id="有无storyboard"><a href="#有无storyboard" class="headerlink" title="有无storyboard"></a>有无storyboard</h4><h5 id="1-有"><a href="#1-有" class="headerlink" title="1.有"></a>1.有</h5><blockquote>
+<p>1.main函数；2.创建UIApplication对象；3.根据Info.plist获取Main.storyboard加载；4.创建UIWindow；</p>
+</blockquote>
+<h5 id="2-无"><a href="#2-无" class="headerlink" title="2.无"></a>2.无</h5><blockquote>
+<p>1.main函数  2.创建UiApplication对象； 3.创建UIApplicationd的delegate对象；4.delegate对象开始处理系统事件，调用代理；5.执行到application：didFinishLaunchingWithOptions；6.创建UIWindow；7.设置RootViewcontroller； 8.显示窗口；</p>
+</blockquote>
+<h4 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h4><ul>
+<li>区分冷热启动，这里主要讲冷启动</li>
+</ul>
+<h5 id="1-main函数执行前"><a href="#1-main函数执行前" class="headerlink" title="1.main函数执行前"></a>1.main函数执行前</h5><blockquote>
+<p>1.加载可执行文件。（App里的所有.o文件)<br>2.加载动态链接库，进行rebase指针调整和bind符号绑定<br>3.objc的runtime初始化 包括：objc相关Class的注册、category注册、selector唯一性检查等<br>4.初始化。 包括：执行+load()方法、用attribute((constructor))修饰的函数的调用、创建C++静态全局变量等</p>
+<p>简单来说，<br>App启动后，首先，系统内核（Kernel）创建一个进程。其次，加载可执行文件。（可执行文件是指Mach-O格式的文件，也就是App中所有.o文件的集合体）这时，能获取到dyld（dyld是苹果的动态链接器）的路径。<br>然后，加载dyld，主要分为4步：<br>&emsp;1 . load dylibs：这一阶段dyld会分析应用依赖的dylib，找到其mach-o文件，打开和读取这些文件并验证其有效性，接着会找到代码签名注册到内核，最后对dylib的每一个segment调用mmap()。<br>&emsp;2 . rebase/bind：进行rebase指针调整和bind符号绑定。<br>&emsp;3 . ObjC setup：runtime运行时初始化。包括ObjC相关Class的注册、category注册、selector唯一性检查等。<br>&emsp;4 . Initializers：调用每个ObjC类与分类的+load方法，调用attribute((constructor))修饰的函数、创建C++静态全局变量。</p>
+</blockquote>
+<h5 id="2-main函数执行后"><a href="#2-main函数执行后" class="headerlink" title="2.main函数执行后"></a>2.main函数执行后</h5><blockquote>
+<p>这个阶段主要完成的是首屏的一些工作，包括首屏初始化的配置文件读取，列表数据的读取，渲染</p>
+<p>总的来讲：main函数通知UIApplicationMain()去创建UIApplication(包括：代理，创建主RunLoop)，然后读取plist文件，需不需要storyboard，在didFinish代理回调里设置Window，以及rootController</p>
+</blockquote>
+<h5 id="3-首屏渲染完成后"><a href="#3-首屏渲染完成后" class="headerlink" title="3.首屏渲染完成后"></a>3.首屏渲染完成后</h5><blockquote>
+<p>首屏渲染完成后的阶段，指的是:didFinishLaunchingWithOptions方法作用域内执行首屏渲染后的所有方法执行。即从设置self.window.rootViewController到didFinishLaunchWithOptions方法作用域结束。</p>
+</blockquote>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化!"></a>优化!</h4><blockquote>
+<p>&emsp;1.代码内减少使用+load方法,尽量将在+load内执行的内容放到渲染之后，或者使用+initialize()<br>&emsp;2.动态库合并，苹果公司建议使用更少的动态库，并且建议在使用动态库的数量较多时，尽量将多个动态库进行合并。数量上，苹果公司最多可以支持6个非系统动态库合并为一个。<br>&emsp;3.优化类、方法、全局变量,减少加载启动后不会去使用的类或方法；少用C++全局变量<br>&emsp;4.优化首屏渲染前的功能初始化,就是尽量不要把初始化放在didFinish</p>
+</blockquote>
+<h2 id="可执行文件-Mach-o"><a href="#可执行文件-Mach-o" class="headerlink" title="可执行文件(Mach-o)"></a>可执行文件(Mach-o)</h2><ul>
+<li>相当于window的exe文件</li>
+<li>在ipa包内体积最大那个就是了</li>
+<li>可以使用MachoOView分析文件</li>
+</ul>
+<h2 id="动态链接库"><a href="#动态链接库" class="headerlink" title="动态链接库"></a>动态链接库</h2><blockquote>
+<p>&emsp; 库的链接分为静态和动态两种，iOS中直接影响到的就是包体积大小。1. 静态库，在我们开发完成之后会被打包到可执行文件内，包体积就大。2.动态库，比如UIKit系统库，存在于iOS系统内部，不被打包到我们的可执行文件内，只有在包安装到iOS上，启动时候会被dyld（动态链接器）链接起来，app就可以调用系统函数</p>
+</blockquote>
+<h2 id="Class原理"><a href="#Class原理" class="headerlink" title="Class原理"></a>Class原理</h2><blockquote>
+<p>&emsp; Class在iOS中实际上就是指向objc_class结构体的指针 | class、metaclass对象本质都是struct objc_class</p>
+</blockquote>
+<ul>
+<li>1.实例对象（id）：对类对象alloc或者new操作时创建，这个过程中会拷贝实例所属类的成员变量，但并不拷贝类定义的方法。实力对象在内存中存储的信息包括isa指针以及其他成员变量</li>
+<li>2.类对象（class）：使用class和object_getClass获取的对象都是类对象；每个类在内存中只有一份；类对象在内存中包括：isa指针、superclass指针，类的属性（property）、类的对象方法信息（instancemethod）、类的协议信息（protocol）、类的成员变量信息（ivar）</li>
+<li>3.元类对象（metaclass）：object_getClass([NSObject class])获取到的就是元类对象；每个类的内存有且只有一个meta-class对象;类方法存在于元类对象内；元类对象内包括：isa指针、superclass、类方法</li>
+<li>4.[[NSObject class] class] 获取的是类对象不是元类对象</li>
+<li><ol>
+<li>runtime的class_isMetaClass可以查看是否元类对象</li>
+</ol>
+</li>
+<li>6.实例对象的isa指向类对象，类对象的isa指向元类对象</li>
+<li>7.调用实例对象的对象方法时候，通过isa找到类对象，再调用类对象内的对象方法</li>
+<li>8.调用类对象的类方法的时候，通过类对象的isa找到元类对象，再调用元类对象内的类方法</li>
+<li>9.实例对象没有superclass</li>
+<li>10.类对象的superclass指针指向父类的类对象</li>
+<li>11.类对象superclass指针最终指向NSObject的类对象</li>
+<li>12.实例对象要调用父类的对象方法时，需要使用isa找到自身的类对象，在用类对象的superclass指针找到父类的类对象，从而找到父类的对象方法。（找类方法差不多，就是找metaclass）</li>
+<li>13.没有父类，superclas指针为nil</li>
+<li>14.64bit开始，利用isa指针查找，需要&amp;ISA_MASK 进行位运算才能计算真实的地址</li>
+<li>15.class、metaclass对象本质都是struct objc_class</li>
+</ul>
+<p><img src="/assets/blogImg/objectClass结构体.png" alt="图片">     </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">//1. 弃用的Class指针结构体</div><div class="line">struct objc_class &#123;</div><div class="line">    Class _Nonnull isa  OBJC_ISA_AVAILABILITY;</div><div class="line"></div><div class="line">#if !__OBJC2__</div><div class="line">    Class _Nullable super_class                               OBJC2_UNAVAILABLE;</div><div class="line">    const char * _Nonnull name                               OBJC2_UNAVAILABLE;</div><div class="line">    long version                                             OBJC2_UNAVAILABLE;</div><div class="line">    long info                                                OBJC2_UNAVAILABLE;</div><div class="line">    long instance_size                                       OBJC2_UNAVAILABLE;</div><div class="line">    struct objc_ivar_list * _Nullable ivars                  OBJC2_UNAVAILABLE;</div><div class="line">    struct objc_method_list * _Nullable * _Nullable methodLists                    OBJC2_UNAVAILABLE;</div><div class="line">    struct objc_cache * _Nonnull cache                       OBJC2_UNAVAILABLE;</div><div class="line">    struct objc_protocol_list * _Nullable protocols          OBJC2_UNAVAILABLE;</div><div class="line">#endif</div><div class="line"></div><div class="line">&#125; OBJC2_UNAVAILABLE;</div><div class="line"></div><div class="line">//2.现Class指针结构体</div><div class="line">struct objc_class : objc_object &#123;</div><div class="line">    // Class ISA;</div><div class="line">    Class superclass;</div><div class="line">    cache_t cache;             // formerly cache pointer and vtable</div><div class="line">    class_data_bits_t bits;    // class_rw_t * plus custom rr/alloc flags</div><div class="line"></div><div class="line">    class_rw_t *data() &#123; </div><div class="line">        return bits.data();</div><div class="line">    &#125;</div><div class="line">    void setData(class_rw_t *newData) &#123;</div><div class="line">        bits.setData(newData);</div><div class="line">    &#125;</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="KVO"><a href="#KVO" class="headerlink" title="KVO"></a>KVO</h2><blockquote>
+<ol>
+<li>全称 Key-Value Observing(‘键值监听’),可以用于监听某个对象属性值的改变  </li>
+<li>KVO时，将被监听的对象isa指针动态修改成新类NSKVONotifying_Person  </li>
+<li>同时修改superclass和class两个实现，隐藏了NSKVONotifying_Person的存在，使用object_getClass可以找出来  </li>
+<li>通过set方法为属性赋值触发监听，也可以手动触发willcchange和didchange，直接修改成员变量不会触发监听<br><img src="/assets/blogImg/20191030kvo1.png" alt="图片"><br><img src="/assets/blogImg/20191030kvo2.png" alt="图片">     </li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- (void)setAge:(int)age</div><div class="line">&#123;</div><div class="line">    _NSSetIntValueAndNotify();</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 伪代码</div><div class="line">void _NSSetIntValueAndNotify()</div><div class="line">&#123;</div><div class="line">    [self willChangeValueForKey:@&quot;age&quot;];</div><div class="line">    [super setAge:age];</div><div class="line">    [self didChangeValueForKey:@&quot;age&quot;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="KVC"><a href="#KVC" class="headerlink" title="KVC"></a>KVC</h2><blockquote>
+<ol>
+<li>KVC的全称是Key-Value Coding，俗称“键值编码”，可以通过一个key来访问某个属性  </li>
+</ol>
+<ul>
+<li>(void)setValue:(id)value forKeyPath:(NSString *)keyPath;</li>
+<li>(void)setValue:(id)value forKey:(NSString *)key;</li>
+<li>(id)valueForKeyPath:(NSString *)keyPath;</li>
+<li>(id)valueForKey:(NSString *)key; </li>
+</ul>
+</blockquote>
+<p><img src="/assets/blogImg/20191030kvc1.png" alt="图片">     </p>
+<h2 id="Category"><a href="#Category" class="headerlink" title="Category"></a>Category</h2><blockquote>
+<ol>
+<li>为已经存在的类添加方法、属性，无法添加成员变量；添加属性，只会生成set和get方法  （无法生成成员变量）</li>
+<li>Category 中的方法和类中原有方法同名，category 中的方法会覆盖掉类中原有的方法 （最后加载的留下）</li>
+<li>使用关联变相给Category添加成员变量 设置：objc_setAssociatedObject，获取：objc_getAssociatedObject(self, &amp;nameKey);      -  分类添加属性</li>
+<li>在Objective-C提供的runtime函数中，确实有一个lass_addIvar(),这个函数只能在“构建一个类的过程中”调用。一旦完成类定义，就不能再添加成员变量了。经过编译的类在程序启动后就被runtime加载，没有机会调用addIvar。程序在运行时动态构建的类需要在调用objc_registerClassPair之后才可以被使用，同样没有机会再添加成员变量。  </li>
+<li>实例对象在创建的时候就规定了isa指针以及成员变量，也就是实例变量的那块内存布局，如果动态添加了成员变量，就破坏了实例对象内存，这个实例对象就会变成了无效的对象。方法不存在实例对象内！</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//分类的源代码</div><div class="line">typedef struct category_t *Category;</div><div class="line">struct category_t &#123;</div><div class="line">    const char *name;    //category名称</div><div class="line">    classref_t cls;     //要拓展的类</div><div class="line">    struct method_list_t *instanceMethods; //给类添加的实例方法的列表</div><div class="line">    struct method_list_t *classMethods;  //给类添加的类方法的列表</div><div class="line">    struct protocol_list_t *protocols;  //给类添加的协议的列表</div><div class="line">    struct property_list_t *instanceProperties;  //给类添加的属性的列表</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="AutoReleasePool"><a href="#AutoReleasePool" class="headerlink" title="AutoReleasePool"></a>AutoReleasePool</h2><ul>
+<li>自动释放池 ：一般理解就是自动帮OC对象添加release操作，从而合理管理引用计数</li>
+<li>哨兵对象：NSAutoReleasePool 类的 push() 标记 一个哨兵对象 的内存地址，以NSAutoReleasePool成员变量的方式保存。AutoReleasePool代码块里面 创建 的OC对象，都会标记到哨兵对象之后的内存块中。（其实就是类似Array添加对象，然后在释放后把Array里面的所有对象都给释放掉一样），调用 [pool drain] 的时候，实际是调用NSAutoReleasePool 的pop方法，然后把添加在哨兵对象之后的OC对象全部释放  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//AutoReleasePoolPage的源码大概是这样的流程</div><div class="line">NSAutoReleasePool *pool = [[NSAutoReleasePool alloc] init];       ------&gt;  id context = AutoreleasePoolPage.push();</div><div class="line">[obj1 autorelease]; -------&gt; getHotPage().add(obj1); 添加到哨兵对象之后</div><div class="line">[obj2 autorelease]; -------&gt; getHotPage().add(obj2);</div><div class="line">[pool drain]; -------&gt; AutoreleasePoolPage.pop(context);</div></pre></td></tr></table></figure>
+<h2 id="load方法"><a href="#load方法" class="headerlink" title="+load方法"></a>+load方法</h2><blockquote>
+<ol>
+<li>每个类、分类的+load，在程序运行过程中只调用一次  </li>
+<li>调用顺序：1先调用类的+load（ 按照编译先后顺序调用，先编译，先调用；调用子类的+load之前会先调用父类的+load），2再调用分类的+load（按照编译先后顺序调用，先编译，先调用）  </li>
+<li>+load方法不经过msgSend调用，而是直接使用函数地址  </li>
+</ol>
+<p>+load()与+initialize()两者的区别?<br>+load()方法会在main()函数调用前就调用，而+initialize()是在类第一次使用时才会调用。<br>+load方法的调用优先级: 父类 &gt; 子类 &gt; 分类，并且不会被覆盖，均会调用。<br>+load方法是在main() 函数之前调用，所有的类文件都会加载，包括分类也会加载。<br>+initialize方法的调用优先级：分类 &gt; 子类，父类 &gt; 子类。（父类的分类重写了+initialize方法会覆盖父类的+initialize方法）</p>
+</blockquote>
+<h2 id="initialize方法"><a href="#initialize方法" class="headerlink" title="+initialize方法"></a>+initialize方法</h2><blockquote>
+<ol>
+<li>在类第一次接收到消息时调用  </li>
+<li>先调用父类的+initialize，再调用子类的+initialize (先初始化父类，再初始化子类，每个类只会初始化1次)  </li>
+<li>initialize是通过objc_msgSend进行调用的  </li>
+<li>如果子类没有实现+initialize，会调用父类的+initialize（所以父类的+initialize可能会被调用多次）  </li>
+<li>如果分类实现了+initialize，就覆盖类本身的+initialize调用  </li>
+</ol>
+</blockquote>
+<h2 id="符号表"><a href="#符号表" class="headerlink" title="符号表"></a>符号表</h2><h2 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h2><blockquote>
+<ol>
+<li>autolayout下系统会在viewDidAppear之前重新根据subView计算contentsize，所以在viewdidiload里面手动设置contentsize会被覆盖；希望在viewdidload下设置contentsize的话需要去掉autolayout选项,或者自己设置subView的constraint，或者在viewdidappear手动设置contentsize</li>
+</ol>
+</blockquote>
+<h2 id="View、UIWindow、CALayer"><a href="#View、UIWindow、CALayer" class="headerlink" title="View、UIWindow、CALayer"></a>View、UIWindow、CALayer</h2><blockquote>
+<ol>
+<li>View - UIResponder；CALayer - NSObject;  </li>
+<li>都是容器，View能响应事件，CALayer不能，UIWindow传递</li>
+</ol>
+</blockquote>
+<h2 id="frame-和-bounds"><a href="#frame-和-bounds" class="headerlink" title="frame 和 bounds"></a>frame 和 bounds</h2><blockquote>
+<ol>
+<li>frame指的是View在父View中的位置大小，参照物是父View的坐标系  </li>
+<li>bounds指的是自身在坐标系中的位置大小，参照物是本身</li>
+</ol>
+</blockquote>
+<h2 id="关联对象ASSOCIATION"><a href="#关联对象ASSOCIATION" class="headerlink" title="关联对象ASSOCIATION"></a>关联对象ASSOCIATION</h2><ul>
+<li>我们所说的关联对象的使用环境，或者说面试时候的关联对象，通常以给分类添加属性时候的使用，因为分类无法添加成员变量</li>
+</ul>
+<blockquote>
+<ol>
+<li>设置: objc_setAssociatedObject(self, @”name”,name, OBJC_ASSOCIATION_RETAIN_NONATOMIC);   获取: objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy);   移除: objc_removeAssociatedObjects(self);</li>
+<li>关联对象并不是存储在被关联对象本身内存中  </li>
+<li>关联对象存储在全局的统一的一个AssociationsManager中  </li>
+<li><p>策略:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy) &#123;</div><div class="line">    OBJC_ASSOCIATION_ASSIGN = 0,  // 指定一个弱引用相关联的对象</div><div class="line">    OBJC_ASSOCIATION_RETAIN_NONATOMIC = 1, // 指定相关对象的强引用，非原子性</div><div class="line">    OBJC_ASSOCIATION_COPY_NONATOMIC = 3,  // 指定相关的对象被复制，非原子性</div><div class="line">    OBJC_ASSOCIATION_RETAIN = 01401,  // 指定相关对象的强引用，原子性</div><div class="line">    OBJC_ASSOCIATION_COPY = 01403     // 指定相关的对象被复制，原子性   </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果设置关联对象为nil，就相当于是移除关联对象  </p>
+</li>
+<li>weak修饰的属性，在对象销毁时候指针就置空了，但是哈希表内对应的值还在，当我们使用这个指针去释放的时候，这个指针地址已经为空了</li>
+</ol>
+</blockquote>
+<p><img src="/assets/blogImg/AssociationsManagerImage1.png" alt="关联对象原理">     </p>
+<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h2><blockquote>
+<ol>
+<li>block本质上也是一个OC对象，它内部也有个isa指针  </li>
+<li>block是封装了函数调用以及函数调用环境的OC对象  </li>
+<li>为了保证block内部能够正常访问外部的变量，block有个变量捕获机制  </li>
+<li>定义block之后修改局部变量的值，在block调用的时候无法生效，局部变量传入block之后，内调用变量是在block内部的变量，所以外部修改局部变量无法生效  </li>
+<li>block内部存在一个isa指针，表示这个结构体是一个oc对象  </li>
+<li>构造函数中传入的参数都存在了__main_block_impl_0这个结构体中，最后又将这个结构体的指针赋值给了block  </li>
+<li>block代码块中的代码被封装成<strong>main_block_func_0函数，FuncPtr则存储着</strong>main_block_func_0函数的地址  </li>
+<li>Desc指向<strong>main_block_desc_0结构体对象，其中存储</strong>main_block_impl_0结构体所占用的内存  </li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">//clang编译器可以将oc代码装换成c++代码</div><div class="line">xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc main.m</div><div class="line">//oc代码</div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    @autoreleasepool &#123;</div><div class="line">        int age = 10;</div><div class="line">        void(^block)(int ,int) = ^(int a, int b)&#123;</div><div class="line">            NSLog(@&quot;this is block,a = %d,b = %d&quot;,a,b);</div><div class="line">            NSLog(@&quot;this is block,age = %d&quot;,age);</div><div class="line">        &#125;;</div><div class="line">        block(3,5);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 定义block变量代码</div><div class="line">void(*block)(int ,int) = ((void (*)(int, int))&amp;__main_block_impl_0((void *)__main_block_func_0, &amp;__main_block_desc_0_DATA, age));</div><div class="line"></div><div class="line">//__block_impl结构体</div><div class="line">struct __block_impl&#123;</div><div class="line">    void *isa;  //&amp;_NSConcreteStackBlockd地址,block就是_NSConcreteStackBlock类型</div><div class="line">    int Flags;  //</div><div class="line">    int Reserved;</div><div class="line">    void *FuncPtr; //block代码块中的代码被封装成__main_block_func_0函数存储在FuncPtr中</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 执行block内部的代码，很明确的能看到我们在使用block内部代码的时候是通过FuncPtr</div><div class="line">//这里使用的是__block_imple类型的block，因为__block_impl是__main_block_impl_0的第一个参数，所以起始的内存地址是一致的，可以进行强制类型装换,并且通过这个block找到FuncPtr</div><div class="line">((void (*)(__block_impl *, int, int))((__block_impl *)block)-&gt;FuncPtr)((__block_impl *)block, 3, 5);</div><div class="line"></div><div class="line">/******8  传入参数  */</div><div class="line">//__main_block_func_0存储着我们在block中写入的代码</div><div class="line">static void __main_block_func_0（...）&#123;</div><div class="line">    int age = _cself-&gt;age</div><div class="line">    nslog(...)</div><div class="line">    nslog(...)</div><div class="line">&#125;</div><div class="line"></div><div class="line">//&amp;__main_block_desc_0_DATA</div><div class="line">static struct __main_block_desc_0 &#123;</div><div class="line">    size_t reserved     //0</div><div class="line">    size_t Blick_size   //传入了 __main_block_impl_0 大小</div><div class="line">&#125; __main_block_desc_0_DATA = &#123;0,sizefo(struct __main_block_impl_0)&#125;</div><div class="line"></div><div class="line">//自定义的局部变量，因为在block块中使用带了age这个局部变量，所以将这个age当参数传入了block</div><div class="line">age</div><div class="line"></div><div class="line">/*************/</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/blockimg1.png" alt="_main_block_imp_0结构体"><br><img src="/assets/blogImg/blockimg2.png" alt="block示意图">     </p>
+<h2 id="Block捕获"><a href="#Block捕获" class="headerlink" title="Block捕获"></a>Block捕获</h2><ul>
+<li>Block内部可以正常访问外部变量，有一个捕获的机制</li>
+<li>self同样被block捕获，不论对象方法还是类方法都会默认将self作为参数传递给方法内部</li>
+<li><p>即使block中使用的是实例对象的属性，block中捕获的仍然是实例对象，并通过实例对象通过不同的方式去获取使用到的属性（self.name : 捕获self 通过name的get方法）</p>
+<h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4></li>
+<li><p>auto变量</p>
+<blockquote>
+<p>auto自动变量，离开作用域就销毁，通常局部变量前面自动添加auto关键字。<br>自动变量会被捕获到block内部，也就是说block内部会专门新增加一个参数来存储变量的值<br>auto只存在于局部变量中，访问方式为值传递，内存拷贝，深拷贝</p>
+</blockquote>
+</li>
+<li><p>static变量</p>
+<blockquote>
+<p>static 修饰的变量为指针传递，同样会被block捕获<br>捕获的内部是 int *age 的指针形式</p>
+</blockquote>
+</li>
+<li><p>自动变量和静态变量的区别来自于销毁的机制：自动变量是入栈，函数结束等都可能被销毁；静态变量，内存中有且只有一份，不会被销毁。所以自动变量需要保存值，而静态变量保存指针地址就行</p>
+</li>
+<li>所以外部修改自动变量不影响block内部，修改静态变量就会影响</li>
+</ul>
+<h4 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h4><ul>
+<li>全局变量哪里都能访问，所以__main_block_imp_0没有添加任何变量，不捕获任何变量</li>
+<li>局部变量因为跨函数访问所以需要捕获，全局变量在哪里都可以访问 ，所以不用捕获</li>
+</ul>
+<h2 id="Block类型"><a href="#Block类型" class="headerlink" title="Block类型"></a>Block类型</h2><ul>
+<li>ARC环境下会对栈区的block进行一次copy操作，将block提升到堆区</li>
+<li>block继承于NSBlock，NSBlock继承于NSObject</li>
+<li>block的三种类型：1. <strong>NSGlobalBlock</strong> （ _NSConcreteGlobalBlock ），2.<strong>NSStackBlock</strong> （ _NSConcreteStackBlock ），3.<strong>NSMallocBlock</strong> （ _NSConcreteMallocBlock ）  </li>
+<li>NSGlobalBlock ：不访问自动变量，多数情况下使用不到，通常全局变量在哪里都能访问，所以使用函数去完成相应的处理就行了</li>
+<li>NSStackBlock：访问自动变量，使用到最多的情况，捕获自动变量进栈</li>
+<li>NSMallocBlock：栈区的block在函数作用域结束时候跟着一起销毁，使用copy方式将block提升到堆区，防止内存被回收</li>
+</ul>
+<p><img src="/assets/blogImg/blockimg3.png" alt="block示意图"><br><em>block在内存中的分配区域</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">// 验证代码：MRC环境下验证Block到底是进数据段还是堆还是栈</div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    @autoreleasepool &#123;</div><div class="line">        // Global：没有访问auto变量：__NSGlobalBlock__</div><div class="line">        void (^block1)(void) = ^&#123;</div><div class="line">            NSLog(@&quot;block1---------&quot;);</div><div class="line">        &#125;;   </div><div class="line">        // Stack：访问了auto变量： __NSStackBlock__</div><div class="line">        int a = 10;</div><div class="line">        void (^block2)(void) = ^&#123;</div><div class="line">            NSLog(@&quot;block2---------%d&quot;, a);</div><div class="line">        &#125;;</div><div class="line">        NSLog(@&quot;%@ %@&quot;, [block1 class], [block2 class]);</div><div class="line">        // __NSStackBlock__调用copy ： __NSMallocBlock__</div><div class="line">        NSLog(@&quot;%@&quot;, [[block2 copy] class]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"> // __NSStackBlock__ 调用copy 转化为__NSMallocBlock__ 防止内存作用域过后内存被回收</div><div class="line">int age = 10;</div><div class="line">block = [^&#123;</div><div class="line">    NSLog(@&quot;block---------%d&quot;, age);</div><div class="line">&#125; copy];</div><div class="line">[block release];</div></pre></td></tr></table></figure>
+<p><em>上述代码验证代码验证各个情况block的内存类型情况，验证结果</em></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>环境</th>
+<th>内存区域  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NSGlobalBlock</strong></td>
+<td>没有访问auto变量</td>
+<td>数据段</td>
+</tr>
+<tr>
+<td><strong>NSStackBlock</strong></td>
+<td>访问oauto变量</td>
+<td>栈区 </td>
+</tr>
+<tr>
+<td><strong>NSMallocBlock</strong></td>
+<td><strong>NSStackBlock</strong>调用copy</td>
+<td>堆区 </td>
+</tr>
+</tbody>
+</table>
+<p><em>各个类型的Block调用copy对类型的影响</em></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>内存</th>
+<th>copy  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NSGlobalBlock</strong></td>
+<td>数据段</td>
+<td>不改变类型，没反应</td>
+</tr>
+<tr>
+<td><strong>NSStackBlock</strong></td>
+<td>栈区</td>
+<td>由栈入堆，类型变NSMallocBlock</td>
+</tr>
+<tr>
+<td><strong>NSMallocBlock</strong></td>
+<td>堆去</td>
+<td>增加引用计数，不改变类型 </td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//将block赋值给__strong指针时</div><div class="line">//block被强指针引用时，RAC也会自动对block进行一次copy操作</div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    @autoreleasepool &#123;</div><div class="line">        // block内没有访问auto变量</div><div class="line">        Block block = ^&#123;</div><div class="line">            NSLog(@&quot;block---------&quot;);</div><div class="line">        &#125;;</div><div class="line">        NSLog(@&quot;%@&quot;,[block class]);</div><div class="line">        int a = 10;</div><div class="line">        // block内访问了auto变量，但没有赋值给__strong指针</div><div class="line">        NSLog(@&quot;%@&quot;,[^&#123;</div><div class="line">            NSLog(@&quot;block1---------%d&quot;, a);</div><div class="line">        &#125; class]);</div><div class="line">        // block赋值给__strong指针</div><div class="line">        Block block2 = ^&#123;</div><div class="line">          NSLog(@&quot;block2---------%d&quot;, a);</div><div class="line">        &#125;;</div><div class="line">        NSLog(@&quot;%@&quot;,[block1 class]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line">//打印结果:__NSGlobalBlock__;__NSStackBlock__;__NSMallocBlock__</div></pre></td></tr></table></figure>
+<h2 id="block修饰"><a href="#block修饰" class="headerlink" title="_block修饰"></a>_block修饰</h2><ul>
+<li>__block可以用于解决block内部无法修改auto变量值的问题，因为编译器会将_block包装成一个对象（_Block_object_assign），</li>
+<li>__block不能修饰全局变量、静态变量（static）  </li>
+<li><strong>block变量从堆上移除会调用</strong>block变量内部的dispose函数，dispose函数内部会调用_Block_object_dispose函数，_Block_object_dispose函数会自动释放指向的对象（release）</li>
+<li>当<strong>block变量在栈上时，不会对指向的对象产生强引用<br>_ </strong>block变量被copy到堆时会调用<strong>block变量内部的copy函数,copy函数内部会调用_Block_object_assign函数,_Block_object_assign函数会根据所指向对象的修饰符（</strong>strong、<strong>weak、</strong>unsafe_unretained）做出相应的操作，形成强引用（retain）或者弱引用（注意：这里仅限于ARC时会retain，MRC时不会retain）</li>
+</ul>
+<p><em>_block修饰变量的实际表现:</em><br><img src="/assets/blogImg/blockimg4.png" alt="block示意图"></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/11/05/[日常]命令笔记/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/10/15/[小程序]小程序的一些点/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="July's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        1007881775@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:1007881775@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/pdf" title="书籍">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                书籍
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/3852766965" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/yaotao1995" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/yaotao-9" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;YaoTao'sBlog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
