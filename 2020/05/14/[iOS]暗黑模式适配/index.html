@@ -46,7 +46,7 @@
     
     <title>
         
-            RunTime复习 | iOS | 
+            暗黑模式适配 | iOS | 
         
         YaoTao&#39;sBlog
     </title>
@@ -56,13 +56,11 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="【记录下那些看似没用的知识点】
-
-RunTime复习
-今天圣诞节公司聚会到了晚上11点刚回到寝室，泡脚的时候(没事多泡脚是有好处的)才发现今天还有任务没完成 - 记录下今天对于RunTime的知识点复习
+    <meta name="description" itemprop="description" content="
+暗黑模式的适配，以及可能碰到的问题
 
 
-     ">
+">
     <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
@@ -219,7 +217,7 @@ RunTime复习
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="YaoTao&#39;sBlog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2017/12/25/[iOS]RunTime复习/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/05/14/[iOS]暗黑模式适配/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="YaoTao&#39;sBlog">
@@ -234,22 +232,20 @@ RunTime复习
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2017/12/25/[iOS]RunTime复习/">
+    <meta property="og:url" content="http://yoursite.com/2020/05/14/[iOS]暗黑模式适配/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="RunTime复习 | iOS | YaoTao&#39;sBlog">
+    <meta property="og:title" content="暗黑模式适配 | iOS | YaoTao&#39;sBlog">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="【记录下那些看似没用的知识点】
-
-RunTime复习
-今天圣诞节公司聚会到了晚上11点刚回到寝室，泡脚的时候(没事多泡脚是有好处的)才发现今天还有任务没完成 - 记录下今天对于RunTime的知识点复习
+    <meta property="og:description" content="
+暗黑模式的适配，以及可能碰到的问题
 
 
-     ">
+">
     
 
     
-        <meta property="article:published_time" content="Mon Dec 25 2017 23:05:00 GMT+0800">
-        <meta property="article:modified_time" content="Sat Aug 17 2019 09:04:13 GMT+0800">
+        <meta property="article:published_time" content="Thu May 14 2020 17:34:00 GMT+0800">
+        <meta property="article:modified_time" content="Thu May 14 2020 21:27:04 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -257,7 +253,7 @@ RunTime复习
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/12/25/[iOS]RunTime复习/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2020/05/14/[iOS]暗黑模式适配/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -269,10 +265,10 @@ RunTime复习
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/12/25/[iOS]RunTime复习/index.html",
-    "headline": "RunTime复习 | iOS",
-    "datePublished": "Mon Dec 25 2017 23:05:00 GMT+0800",
-    "dateModified": "Sat Aug 17 2019 09:04:13 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2020/05/14/[iOS]暗黑模式适配/index.html",
+    "headline": "暗黑模式适配 | iOS",
+    "datePublished": "Thu May 14 2020 17:34:00 GMT+0800",
+    "dateModified": "Thu May 14 2020 21:27:04 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "July",
@@ -291,13 +287,11 @@ RunTime复习
         }
     },
     "keywords": "",
-    "description": "【记录下那些看似没用的知识点】
-
-RunTime复习
-今天圣诞节公司聚会到了晚上11点刚回到寝室，泡脚的时候(没事多泡脚是有好处的)才发现今天还有任务没完成 - 记录下今天对于RunTime的知识点复习
+    "description": "
+暗黑模式的适配，以及可能碰到的问题
 
 
-     ",
+",
 }
 </script>
 
@@ -356,6 +350,15 @@ RunTime复习
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#适配"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">适配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、图片"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">一、图片</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、文本"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">二、文本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文本注意点"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">文本注意点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文本的适配"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">文本的适配</span></a></li></ol></li></ol></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -385,7 +388,7 @@ RunTime复习
         
     
             <p class="article-headline-p">
-                RunTime复习 | iOS
+                暗黑模式适配 | iOS
             </p>
         </div>
 
@@ -404,7 +407,7 @@ RunTime复习
     <!-- Author Name & Date -->
     <div>
         <strong>July</strong>
-        <span>12月 25, 2017</span>
+        <span>5月 14, 2020</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -436,7 +439,7 @@ RunTime复习
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=RunTime复习 | iOS&url=http://yoursite.com/2017/12/25/[iOS]RunTime复习/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=暗黑模式适配 | iOS&url=http://yoursite.com/2020/05/14/[iOS]暗黑模式适配/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -445,7 +448,7 @@ RunTime复习
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=RunTime复习 | iOS&url=http://yoursite.com/2017/12/25/[iOS]RunTime复习/index.html&via=July" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=暗黑模式适配 | iOS&url=http://yoursite.com/2020/05/14/[iOS]暗黑模式适配/index.html&via=July" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -454,7 +457,7 @@ RunTime复习
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/12/25/[iOS]RunTime复习/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/14/[iOS]暗黑模式适配/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -463,7 +466,7 @@ RunTime复习
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/12/25/[iOS]RunTime复习/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/14/[iOS]暗黑模式适配/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -488,57 +491,60 @@ RunTime复习
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><strong>【记录下那些看似没用的知识点】</strong></p>
-<ul>
-<li>RunTime复习</li>
-<li>今天圣诞节公司聚会到了晚上11点刚回到寝室，泡脚的时候(没事多泡脚是有好处的)才发现今天还有任务没完成 - 记录下今天对于RunTime的知识点复习</li>
+        <ul>
+<li>暗黑模式的适配，以及可能碰到的问题</li>
 </ul>
 <hr>
-<p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
+<div align="center"><br><img src="/assets/blogImg/darkmodel2.jpeg" alt="图片"><br></div>
+
 <a id="more"></a>
-<p><strong>【主要内容】</strong></p>
-<p>一. 简介</p>
-<p>首先用我自己的语言描述下什么是runtime 通俗易懂的：oc代码在编译期间其实是不知道要调用那个函数的，只有在运行之后才会根据函数名查找对应的函数（就好比新生上学的时候，老师已经拿到学生名单表了，但是不知道这个名字对应的是谁，只有在正式开始上课的时候才知道这个名字对应哪个人），这样的一个机制就叫做RunTime（运行时）</p>
-<ul>
-<li>下面是网上普遍对如runtime的一个简介<blockquote>
-<p>因为Objc是一门动态语言，所以它总是想办法把一些决定工作从编译连接推迟到运行时。也就是说只有编译器是不够的，还需要一个运行时系统 (runtime system) 来执行编译后的代码。这就是 Objective-C Runtime 系统存在的意义，它是整个Objc运行框架的一块基石。<br>RunTime简称运行时。OC就是运行时机制，其中最主要的是消息机制。对于C语言，函数的调用在编译的时候会决定调用哪个函数。对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。<br>Runtime基本是用C和汇编写的，可见苹果为了动态系统的高效而作出的努力。你可以在这里下到苹果维护的开源代码。苹果和GNU各自维护一个开源的runtime版本，这两个版本之间都在努力的保持一致。</p>
-</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>iOS13苹果推出了暗黑模式，通俗点讲就是黑色主题，</li>
+<li>苹果在推出暗黑模式的时候是抱着这么几个初衷的<ol>
+<li>省电，黑色的主题可以在一定程度上降低屏幕的用电量</li>
+<li>降低刘海屏的存在感，国产Android手机在不断的尝试屏幕的方式，包括挖孔屏、伪全面屏等等；苹果因为摄像头等原因，无法改变屏幕布局，暗黑模式能在一定程度上降低用户对于刘海屏的抵触感，换句话讲就是降低刘海屏的存在感</li>
+<li>护眼等</li>
+</ol>
 </li>
 </ul>
-<p>二. 作用</p>
-<p>1.消息发送</p>
+<h3 id="适配"><a href="#适配" class="headerlink" title="适配"></a>适配</h3><p><font color="red">注意点：图片和文字颜色都有需要注意的地方，下文中会对应提到</font></p>
+<p><font color="red">UIColor 内置用来获取区分模式的颜色：[UIColor colorWithDynamicProvider:…]; </font></p>
 <ul>
-<li>使用方法调用的本质其实就是让对象发送消息</li>
-<li>objc_msgSend ，只有对象才能发送消息</li>
+<li>iPhone暗黑模式的切换在 ‘ 设置 ‘ -&gt; ‘ 显示与亮度 ‘</li>
+<li>适配主要分几点：1. 图片，2. 颜色，3. 切换</li>
 </ul>
-<p>简单的例子：（先导入#import <objc message.h="">）(+-两个符号代表对象的类方法和实例方法)</objc></p>
-<p>创建person对象<br>MyClass *p = [[MyClass alloc] init];</p>
-<p> 调用对象方法<br>[p eat];</p>
-<p>本质：让对象发送消息<br>objc_msgSend(p, @selector(eat));</p>
-<p>调用类方法的方式：两种<br>(1)第一种通过类名调用<br>[MyClass eat];</p>
-<p>(2)第二种通过类对象调用<br>[[Person class] eat];</p>
-<p> 用类名调用类方法，底层会自动把类名转换成类对象调用<br> 本质：让类对象发送消息<br>objc_msgSend([Person class], @selector(eat));</p>
-<p>2.交换方法</p>
+<h4 id="一、图片"><a href="#一、图片" class="headerlink" title="一、图片"></a>一、图片</h4><ul>
+<li>1.Xcode的资源图片内带有 Appearances 选项，如果所示 ‘None’ 为默认，切换到需要的模式</li>
+<li>2.讲对应切图填充即可，系统会在用户切换暗黑模式的时候自动修改</li>
+</ul>
+<div align="center"><br><img src="/assets/blogImg/darkmode1.png" alt="图片"><br></div>
+
 <ul>
-<li>当系统自带的方法功能不够，不全，在给系统自带的方法扩展一些功能，并同时保持原有的功能。</li>
-<li>1.继承系统的类，重写方法.</li>
-<li>2.使用runtime,交换方法.</li>
+<li>3.图片的适配存在一个问题，Tabbar的图片并不会随着系统模式的切换而切换</li>
 </ul>
-<p>例子：（简单吧）</p>
-<p> 加载分类到内存的时候调用</p>
-<p>+(void) load {<br>    Method imageWithName = class_getClassMethod(self, @selector(imageWithName:));<br>    Method imageName = class_getClassMethod(self, @selector(imageNamed:));<br>    method_exchangeImplementations(imageWithName, imageName);<br>}</p>
-<p>3.动态添加方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#pragma mark - 解决 tabbar 暗黑模式 图片不切换问题</div><div class="line">- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection&#123;</div><div class="line">    [super traitCollectionDidChange:previousTraitCollection];</div><div class="line">    if (@available(iOS 13.0, *)) &#123;</div><div class="line">        // Tabbar不支持根据暗黑模式自动修改，这里重新设置下达到自动修改目的</div><div class="line">        //[newImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]</div><div class="line">        for (int i = 0; i &lt; 5; i++)&#123;</div><div class="line">            UIViewController *vc  = self.childViewControllers[i];</div><div class="line">            UIImage *newImage = [[UIImage imageNamed:self.normalImageArray[i]]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];</div><div class="line">                vc.tabBarItem.image = [newImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="二、文本"><a href="#二、文本" class="headerlink" title="二、文本"></a>二、文本</h4><h5 id="文本注意点"><a href="#文本注意点" class="headerlink" title="文本注意点"></a>文本注意点</h5><ul>
+<li>这里主要提供一些思路，具体执行还是看小伙伴你们自己的实现方式</li>
+<li>iOS内置了适配的颜色，例如：UIColor.lightGrayColor，能用系统颜色的尽量在开发过程中</li>
+<li>开发过程中写一套自己的基类，在适配的过程中能极大的减少代码量</li>
+<li>系统在切换的时候会通知所有的window、view需要更新样式，通知到对应函数，比如UIView的：layoutSubviews，UIContrroller的viewWillLayoutSubviews，这里比较推荐的是traitCollectionDidChange()，无论是view或者是controller都会调用</li>
+</ul>
+<h5 id="文本的适配"><a href="#文本的适配" class="headerlink" title="文本的适配"></a>文本的适配</h5><ul>
+<li>1.基本的适配方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">UIColor *titleColor;</div><div class="line">if (@available(iOS 13.0, *))</div><div class="line">&#123;</div><div class="line">    [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection)&#123;</div><div class="line">        if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)&#123;</div><div class="line">            titleColor = UIColor.blackColor;</div><div class="line">        &#125; else &#123;</div><div class="line">            titleColor = UIColor.whiteColor;</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">&#125; else &#123;</div><div class="line">    titleColor = UIColor.whiteColor;</div><div class="line">&#125;</div><div class="line">self.titleLab.textColor = titleColor;</div></pre></td></tr></table></figure>
 <ul>
-<li>如果一个类方法非常多，加载类到内存的时候也比较耗费资源，需要给每个方法生成映射表，可以使用动态给某个类，添加方法解决。</li>
+<li>2.改良版</li>
 </ul>
-<p>例子：（简单吧）</p>
-<p>@implementation ViewController</p>
-<p>-(void)viewDidLoad {<br>    [super viewDidLoad];<br>    Person *p = [[Person alloc] init];<br>    [p performSelector:@selector(eat)];<br>}</p>
-<p>@end</p>
-<p>@implementation Person<br>void eat(id self,SEL sel)<br>{<br>    NSLog(@”%@ %@”,self,NSStringFromSelector(sel));<br>}</p>
-<p>+(BOOL)resolveInstanceMethod:(SEL)sel{<br>    if (sel == @selector(eat)) {<br>                class_addMethod(self, @selector(eat), eat, “v@:”);<br>                }<br>        return [super resolveInstanceMethod:sel];<br>}<br>@end</p>
-<p><strong>【其他】</strong></p>
-<p>还有添加分类 ，字典转换模型 找时间添加上去，睡觉······</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">// 给UIColor添加Category</div><div class="line">// self.titleLab.textColor = [UIColor getYTDynamicBackGroundColor];</div><div class="line"></div><div class="line">/** .h 文件 */</div><div class="line">@interface UIColor (YTDynamicColor)</div><div class="line"></div><div class="line">+ (UIColor *)getYTDynamicBackGroundColor;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">/** .m 文件 */</div><div class="line">#import &quot;UIColor+YTDynamicColor.h&quot;</div><div class="line"></div><div class="line">@implementation UIColor (YTDynamicColor)</div><div class="line"></div><div class="line">/*</div><div class="line"> * 获取动态的背景颜色,暗黑模式下,背景黑色</div><div class="line"> */</div><div class="line"></div><div class="line">+ (UIColor *)getYTDynamicBackGroundColor&#123;</div><div class="line">    return [self getColorWithDark:UIColor.blackColor LightColor:UIColor.whiteColor];</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">* 给暗黑以及浅色两种模式的颜色，匹配返回</div><div class="line">*/</div><div class="line">+ (UIColor *)getColorWithDark:(UIColor *)dark LightColor:(UIColor *)light&#123;</div><div class="line">    if (@available(iOS 13.0, *))</div><div class="line">    &#123;</div><div class="line">        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection)&#123;</div><div class="line">            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)&#123;</div><div class="line">                return  dark;</div><div class="line">            &#125; else &#123;</div><div class="line">                return light;</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">    &#125; else &#123;</div><div class="line">        return light;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<ul>
+<li>3.进阶版</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">// 给UIColor添加Category，配合关联</div><div class="line">// 如下关联对象还有点粗糙，相信明白的小伙伴知道如何改了</div><div class="line"></div><div class="line">// self.titleLab.textColor = [UIColor YTDynamicBackGroundColor];</div><div class="line"></div><div class="line">/** .h 文件 */</div><div class="line">@interface UIColor (YTDynamicColor)</div><div class="line"></div><div class="line">+ (UIColor *)YTDynamicBackGroundColor;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line"></div><div class="line">/** .m 文件 */</div><div class="line">#import &quot;UIColor+YTDynamicColor.h&quot;</div><div class="line"></div><div class="line">@implementation UIColor (YTDynamicColor)</div><div class="line"></div><div class="line">/*</div><div class="line"> * 获取动态的背景颜色,暗黑模式下,背景黑色</div><div class="line"> */</div><div class="line">static const char YTDynamicBackGorundKEY = &apos;\0&apos;;</div><div class="line"></div><div class="line">+ (UIColor *)YTDynamicBackGorundColor&#123;</div><div class="line">    </div><div class="line">    UIColor *color = objc_getAssociatedObject(self, &amp;YTDynamicBackGorundKEY);</div><div class="line">    if (!color) &#123;</div><div class="line">        color = [self getColorWithDark:UIColor.blackColor LightColor:UIColor.whiteColor];</div><div class="line">        objc_setAssociatedObject(self, &amp;YTDynamicBackGorundKEY,</div><div class="line">                                    color, OBJC_ASSOCIATION_RETAIN);</div><div class="line">    &#125;</div><div class="line">    return color;</div><div class="line">//  被废弃的方式</div><div class="line">//   return [self getColorWithDark:UIColor.blackColor LightColor:UIColor.whiteColor];</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">* 给暗黑以及浅色两种模式的颜色，匹配返回</div><div class="line">*/</div><div class="line">+ (UIColor *)getColorWithDark:(UIColor *)dark LightColor:(UIColor *)light&#123;</div><div class="line">    if (@available(iOS 13.0, *))</div><div class="line">    &#123;</div><div class="line">        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection)&#123;</div><div class="line">            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)&#123;</div><div class="line">                return  dark;</div><div class="line">            &#125; else &#123;</div><div class="line">                return light;</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">    &#125; else &#123;</div><div class="line">        return light;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<ul>
+<li>注意点：如果文字颜色使用的CGColor，也不会自动切换，也可以使用上面TTabbar的处理方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#pragma mark - 解决 tabbar 暗黑模式 图片不切换问题</div><div class="line">- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection&#123;</div><div class="line">    [super traitCollectionDidChange:previousTraitCollection];</div><div class="line">    self.AAA.layer.***Colorr = self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ? [UIColor blackColor].CGColor : [UIColor whiteColor].CGColor;</div><div class="line">    // if (@available(iOS 13.0, *)) &#123;</div><div class="line">    // &#125;else&#123;</div><div class="line">    // &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
         
     
@@ -559,21 +565,13 @@ RunTime复习
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/01/02/[iOS]分析星巴克App各种效果 - 简单分析篇一/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/12/20/[日常]个人项目总结/" id="post_nav-older" class="next-content">
+        <a href="/2020/02/25/[项目]商城/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
