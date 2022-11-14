@@ -46,7 +46,7 @@
     
     <title>
         
-            项目笔记 | 小程序 | 
+            移动 | Jenkins打包优化实践 | 
         
         YaoTao&#39;sBlog
     </title>
@@ -56,10 +56,12 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="记录一下关于小程序项目的点
-持续记录在小程序项目开发过程中的一些点
-因为小程序在开发过程中，需要自己后台开接口，难免会碰到一些问题
-">
+    <meta name="description" itemprop="description" content="【Jenkins打包优化】
+
+记录一次打包优化过程
+
+
+     ">
     <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
@@ -216,7 +218,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="YaoTao&#39;sBlog">
-    <meta name="msapplication-starturl" content="http://example.com/2019/10/15/%5B%E5%B0%8F%E7%A8%8B%E5%BA%8F%5D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/">
+    <meta name="msapplication-starturl" content="http://example.com/2022/11/14/%5B%E7%A7%BB%E5%8A%A8%5DJenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="YaoTao&#39;sBlog">
@@ -231,19 +233,21 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://example.com/2019/10/15/%5B%E5%B0%8F%E7%A8%8B%E5%BA%8F%5D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/">
+    <meta property="og:url" content="http://example.com/2022/11/14/%5B%E7%A7%BB%E5%8A%A8%5DJenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="项目笔记 | 小程序 | YaoTao&#39;sBlog">
+    <meta property="og:title" content="移动 | Jenkins打包优化实践 | YaoTao&#39;sBlog">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="记录一下关于小程序项目的点
-持续记录在小程序项目开发过程中的一些点
-因为小程序在开发过程中，需要自己后台开接口，难免会碰到一些问题
-">
+    <meta property="og:description" content="【Jenkins打包优化】
+
+记录一次打包优化过程
+
+
+     ">
     
 
     
-        <meta property="article:published_time" content="Tue Oct 15 2019 11:10:00 GMT+0800">
-        <meta property="article:modified_time" content="Mon Dec 09 2019 14:24:12 GMT+0800">
+        <meta property="article:published_time" content="Mon Nov 14 2022 18:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Mon Nov 14 2022 18:29:52 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +255,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://example.com/2019/10/15/%5B%E5%B0%8F%E7%A8%8B%E5%BA%8F%5D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/index.html" />
+        <link rel="canonical" href="http://example.com/2022/11/14/%5B%E7%A7%BB%E5%8A%A8%5DJenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +267,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://example.com/2019/10/15/%5B%E5%B0%8F%E7%A8%8B%E5%BA%8F%5D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/index.html",
-    "headline": "项目笔记 | 小程序",
-    "datePublished": "Tue Oct 15 2019 11:10:00 GMT+0800",
-    "dateModified": "Mon Dec 09 2019 14:24:12 GMT+0800",
+    "mainEntityOfPage": "http://example.com/2022/11/14/%5B%E7%A7%BB%E5%8A%A8%5DJenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/index.html",
+    "headline": "移动 | Jenkins打包优化实践",
+    "datePublished": "Mon Nov 14 2022 18:00:00 GMT+0800",
+    "dateModified": "Mon Nov 14 2022 18:29:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "yaotao",
@@ -285,10 +289,12 @@
         }
     },
     "keywords": "",
-    "description": "记录一下关于小程序项目的点
-持续记录在小程序项目开发过程中的一些点
-因为小程序在开发过程中，需要自己后台开接口，难免会碰到一些问题
-",
+    "description": "【Jenkins打包优化】
+
+记录一次打包优化过程
+
+
+     ",
 }
 </script>
 
@@ -353,7 +359,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%82%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">记录一下关于小程序项目的点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1%E3%80%81%E5%B0%86%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8FglobalData-%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BC%E7%BB%99%E9%A1%B5%E9%9D%A2%E7%9A%84data%EF%BC%8C%E4%B8%8D%E7%BB%8F%E8%BF%87setData"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1、将全局变量globalData 直接赋值给页面的data，不经过setData</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2%E3%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B5%81%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2、二进制流图片展示</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3%E3%80%81web-view%E4%B8%8D%E8%83%BD%E8%AE%BE%E7%BD%AEcookie%EF%BC%8C%E4%B8%8D%E8%83%BD%E8%AE%BE%E7%BD%AEheader"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3、web-view不能设置cookie，不能设置header</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E4%BD%BF%E7%94%A8Jenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5"><span class="post-toc-number">1.</span> <span class="post-toc-text">移动端使用Jenkins打包优化实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF%E8%AF%B4%E6%98%8E"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、背景说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-jenkins%E6%89%93%E5%8C%85%E5%BF%85%E8%A6%81%E6%80%A7"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1. jenkins打包必要性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-%E5%90%84%E7%AB%AF%E6%89%93%E5%8C%85%E6%95%88%E7%8E%87"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2. 各端打包效率</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、优化实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-%E4%BC%98%E5%8C%96%E6%96%B9%E5%90%91"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1. 优化方向</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E6%96%B9%E9%9D%A2%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2. 软件方面优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%EF%BC%881-%E5%88%86%E6%9E%90%E5%8E%9F%E5%9B%A0%EF%BC%8C%E6%89%93%E5%8C%85%E4%B8%BB%E8%A6%81%E8%80%97%E6%97%B6%E5%AE%9E%E8%B7%B5"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">（1. 分析原因，打包主要耗时实践</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%EF%BC%882-%E4%B8%8A%E8%BF%B0%E5%90%84%E9%97%AE%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">（2. 上述各问题的优化实践</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-%E7%A1%AC%E4%BB%B6%E6%96%B9%E9%9D%A2%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">2. 硬件方面优化</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E8%B7%B5%E7%BB%93%E6%9E%9C"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">三、实践结果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%9C"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1.软件优化结果</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-%E6%B5%8B%E8%AF%95%E7%A1%AC%E4%BB%B6%E5%8D%87%E7%BA%A7%E7%BB%93%E6%9E%9C"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">2.测试硬件升级结果</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">四、总结</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -385,7 +391,7 @@
         
     
             <p class="article-headline-p">
-                项目笔记 | 小程序
+                移动 | Jenkins打包优化实践
             </p>
         </div>
 
@@ -404,7 +410,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>yaotao</strong>
-        <span>10月 15, 2019</span>
+        <span>11月 14, 2022</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -436,7 +442,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=项目笔记 | 小程序&url=http://example.com/2019/10/15/%5B%E5%B0%8F%E7%A8%8B%E5%BA%8F%5D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/index.html&pic=http://example.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=移动 | Jenkins打包优化实践&url=http://example.com/2022/11/14/%5B%E7%A7%BB%E5%8A%A8%5DJenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/index.html&pic=http://example.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -445,7 +451,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=项目笔记 | 小程序&url=http://example.com/2019/10/15/%5B%E5%B0%8F%E7%A8%8B%E5%BA%8F%5D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/index.html&via=yaotao" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=移动 | Jenkins打包优化实践&url=http://example.com/2022/11/14/%5B%E7%A7%BB%E5%8A%A8%5DJenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/index.html&via=yaotao" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -454,7 +460,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2019/10/15/%5B%E5%B0%8F%E7%A8%8B%E5%BA%8F%5D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2022/11/14/%5B%E7%A7%BB%E5%8A%A8%5DJenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -463,7 +469,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://example.com/2019/10/15/%5B%E5%B0%8F%E7%A8%8B%E5%BA%8F%5D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://example.com/2022/11/14/%5B%E7%A7%BB%E5%8A%A8%5DJenkins%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -488,39 +494,137 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="记录一下关于小程序项目的点"><a href="#记录一下关于小程序项目的点" class="headerlink" title="记录一下关于小程序项目的点"></a>记录一下关于小程序项目的点</h2><ul>
-<li>持续记录在小程序项目开发过程中的一些点</li>
-<li>因为小程序在开发过程中，需要自己后台开接口，难免会碰到一些问题</li>
+        <p><strong>【Jenkins打包优化】</strong></p>
+<ul>
+<li>记录一次打包优化过程</li>
 </ul>
+<hr>
+<p><img src="/assets/blogImg/images.jpeg" alt="图片">     </p>
 <span id="more"></span>
 
-<h3 id="1、将全局变量globalData-直接赋值给页面的data，不经过setData"><a href="#1、将全局变量globalData-直接赋值给页面的data，不经过setData" class="headerlink" title="1、将全局变量globalData 直接赋值给页面的data，不经过setData"></a>1、将全局变量globalData 直接赋值给页面的data，不经过setData</h3><blockquote>
-<p>示例代码<br><img src="/assets/blogImg/xcxcodeimg1.png" alt="图片"></p>
+
+<h2 id="移动端使用Jenkins打包优化实践"><a href="#移动端使用Jenkins打包优化实践" class="headerlink" title="移动端使用Jenkins打包优化实践"></a>移动端使用Jenkins打包优化实践</h2><p>[TOC]</p>
+<h3 id="一、背景说明"><a href="#一、背景说明" class="headerlink" title="一、背景说明"></a>一、背景说明</h3><h4 id="1-jenkins打包必要性"><a href="#1-jenkins打包必要性" class="headerlink" title="1. jenkins打包必要性"></a>1. jenkins打包必要性</h4><ul>
+<li>提升项目的效率：<font color=red>降低测试和开发的沟通成本，提升开发的编码效率，有助于测试的测试效率</font></li>
+<li>减少移动端开发设备的资源占用，提高移动端个人开发效率（<font color=red>减少手动打包、导包、发包的占用时间</font>，占用时间开发可以用于其余功能点的开发优化）</li>
+<li>提高测试和开发的沟通效率 (<font color=red>自主打包</font>，测试只需关注JIRA单的关闭情况，<font color=red>无需额外沟通</font>)</li>
+<li>jenkins 地址：<a target="_blank" rel="noopener" href="http://10.50.6.114:8080/">http://10.50.6.114:8080/</a> </li>
+<li>涉及端：融易运Android，融易运iOS，陆运通经纪人Android，陆运通经纪人iOS，陆运通货主Android，陆运通货主iOS</li>
+</ul>
+<h4 id="2-各端打包效率"><a href="#2-各端打包效率" class="headerlink" title="2. 各端打包效率"></a>2. 各端打包效率</h4><table>
+<thead>
+<tr>
+<th>端</th>
+<th>单个端打包时间(分钟)</th>
+<th>多个端打包时间(分钟)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>iOS</td>
+<td><font color=red>20～30</font></td>
+<td><font color=red>30～60</font></td>
+</tr>
+<tr>
+<td>Android</td>
+<td>&lt; 10</td>
+<td>10~20</td>
+</tr>
+<tr>
+<td>混合</td>
+<td>/</td>
+<td><font color=red>&gt; 30</font></td>
+</tr>
+</tbody></table>
+<h3 id="二、优化实践"><a href="#二、优化实践" class="headerlink" title="二、优化实践"></a>二、优化实践</h3><blockquote>
+<p>从上述打包效率表格可以看出，打包的多数时间占用在iOS端，本次实践从iOS端入手<br>打包设备：14款mac mini，2.6GHz 双核 Intel Core i5 处理器，8GB 1600MHz LPDDR3 内存，1TB (5400-rpm) 机械硬盘</p>
+</blockquote>
+<h4 id="1-优化方向"><a href="#1-优化方向" class="headerlink" title="1. 优化方向"></a>1. 优化方向</h4><ul>
+<li><p>软件：编译优化</p>
+</li>
+<li><p>硬件：设备升级</p>
+</li>
+</ul>
+<h4 id="2-软件方面优化"><a href="#2-软件方面优化" class="headerlink" title="2. 软件方面优化"></a>2. 软件方面优化</h4><h5 id="（1-分析原因，打包主要耗时实践"><a href="#（1-分析原因，打包主要耗时实践" class="headerlink" title="（1. 分析原因，打包主要耗时实践"></a>（1. 分析原因，打包主要耗时实践</h5><blockquote>
+<p>主要分析依据来源于jenkins控制台的完整日志</p>
 </blockquote>
 <ul>
-<li>如上所示，在Page的data处，直接将全局globalData的user赋值给ID，同时在onLoad函数打印，结果显示可以直接进行赋值</li>
-<li>然而小程序的data是不允许这么赋值的，也就是，在开发过程中，想要给ID赋值需要经过setData</li>
-<li>猜想：这样的赋值方式可以取到值，却不被官方文档允许；能够想到的就是性能优化的问题，这样的指针赋值问题类比到iOS端，就是个内存泄露的隐患，小程序官方无法帮我们写代码，但是可以规定我们如何写从而避免存在的安全隐患</li>
+<li><p>Pods库的全量更新拉取</p>
+</li>
+<li><p>Xcode编辑工具对于代码的检测包括但不限于：_Nullable检测，[-Wstrict-prototypes]等</p>
+</li>
+<li><p>Xcode打包时Debug环境对于iOS各个架构的编译</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ARM CPU的不同指令集</span><br><span class="line">ARM CPU的不同指令集    对应设备</span><br><span class="line">armv7    iPhone 3GS，iPhone4，iPhone 4s，iPad，iPad2，iPad3(The New iPad)，iPad mini，iPod Touch 3G，iPod Touch4</span><br><span class="line">armv7s    iPhone5， iPhone5C，iPad4，iPod5</span><br><span class="line">arm64    iPhone5s，iPhone6、7、8，iPhone6、7、8 Plus，iPhone X，iPad Air，iPad mini2(iPad mini with Retina Display)，</span><br><span class="line">x86_64架构    模拟器64位处理器测试(Xcode 9目前IPhone类型编译出来的都是x86_64)</span><br><span class="line">i386架构    模拟器32位处理器测试</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="2、二进制流图片展示"><a href="#2、二进制流图片展示" class="headerlink" title="2、二进制流图片展示"></a>2、二进制流图片展示</h3><ul>
-<li>该项目项目前端图片展示有两种形式：1. src 填写资源图片的URL、2. src填写后台接口链接，拼上图片ID，在接口内判断图片ID ，获取图片数据流（可以进行一系列图片处理），最后将图片数据流返回</li>
-<li>出于资源安全的考虑，资源图片都保存在static目录下，无法直接通过URL访问，这个时候就需要用到了，接口返回图片数据流的方式</li>
+<h5 id="（2-上述各问题的优化实践"><a href="#（2-上述各问题的优化实践" class="headerlink" title="（2. 上述各问题的优化实践"></a>（2. 上述各问题的优化实践</h5><ul>
+<li>Pods的全量拉取速度慢<ul>
+<li>原因：在于iOS端的三方框架源指向Github，</li>
+<li>处理：目前将三方框架托管至内部gitlib上</li>
+<li>结果：已处理</li>
 </ul>
-<blockquote>
-<p>下图所示<br><img src="/assets/blogImg/xcxcodeimg3.png" alt="图片"><br><img src="/assets/blogImg/xcxcodeimg2.png" alt="图片"></p>
+</li>
+<li>Xcode编辑工具对于代码的检测<ul>
+<li>原因：Xcode会对代码可靠性，安全性等做一些列检查以及提示</li>
+<li>处理：不关闭代码检测</li>
+<li>结果：不关闭</li>
+</ul>
+</li>
+<li>Xcode Debug环境的对于iOS各个架构的全量编译<ul>
+<li>原因：iOS各个机型对应着不同的编译版本，打包时候对于各个版本都进行编译，已达到各个设备都能安装的目的，目前主要包括：armv7，armv7s，arm64</li>
+<li>处理：针对实际情况：目前测试机最低为iphone6，所以将dev环境下armv7，armv7s架构移除，只保留arm64，Dev环境下 build active architecture 设置yes</li>
+<li>结果：已处理</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-硬件方面优化"><a href="#2-硬件方面优化" class="headerlink" title="2. 硬件方面优化"></a>2. 硬件方面优化</h4><ul>
+<li>Wifi影响包上传蒲公英速度<ul>
+<li>原因：公司内网单个账号500k的上传速度较慢</li>
+<li>处理：建议申请单独账号，并且申请解除网速限制</li>
+<li>结果：暂未处理，需要申请</li>
+</ul>
+</li>
+<li>硬件设备版本较低<ul>
+<li>原因：目前打包机使用的是14款mac mini（2.6GHz 双核 Intel Core i5 处理器，8GB 1600MHz LPDDR3 内存，1TB (5400-rpm) 机械硬盘）<br>iOS的Xcode内存占用已高达5.5GB的内存占用，打包机还需运行jenkins环境，Android的打包环境等</li>
+<li>处理：建议升级设备 (建议设备：MacMini Apple M1 芯片，配备 8 核中央处理器、8 核图形处理器和 16 核神经网络引擎、16GB 统一内存、1TB 固态硬盘)</li>
+<li>结果：暂未处理，需要申请</li>
+</ul>
+</li>
+</ul>
+<h3 id="三、实践结果"><a href="#三、实践结果" class="headerlink" title="三、实践结果"></a>三、实践结果</h3><h4 id="1-软件优化结果"><a href="#1-软件优化结果" class="headerlink" title="1.软件优化结果"></a>1.软件优化结果</h4><blockquote>
+<p>以网货平台的<font color=red> 陆运通货主iOS端 </font>打包时间为例</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>打包涉及的端</th>
+<th>优化前(分钟)</th>
+<th>优化后(分钟)</th>
+<th>优化比例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单个项目打包</td>
+<td><font color=red>20~30</font></td>
+<td><font color=red>近两个版本：10、13</font></td>
+<td><font color=red>30% ~ 50%</font></td>
+</tr>
+<tr>
+<td>多个项目打包（存在Android、iOS多个项目并行）</td>
+<td><font color=red>40～50</font></td>
+<td><font color=red>近两个版本：30、40</font></td>
+<td><font color=red>10% ～25%</font></td>
+</tr>
+</tbody></table>
+<h4 id="2-测试硬件升级结果"><a href="#2-测试硬件升级结果" class="headerlink" title="2.测试硬件升级结果"></a>2.测试硬件升级结果</h4><blockquote>
+<p>测试使用设备：M1芯片的MacBookPro,内存8G（内存良好）<br>测试项目：项目陆运通货主iOS端</p>
 </blockquote>
 <ul>
-<li>这个时候问题就来了</li>
-<li>同样的方式，浏览器能识别，但是小程序的Image无法展示，本质上来讲，不管是URL还是接口的形式，都是获取到二进制流，区别在于head的参数</li>
-<li>最后，另辟蹊径，在接口内图片的数据流转成base64数据<br><img src="/assets/blogImg/xcxcodeimg4.png" alt="图片"></li>
+<li>单个货主项目纯打包时间2分钟（不包含代码更新，导包上传），<font color=red>单个项目出包的时间减少比例达90%</font></li>
+<li>预计整体：多个项目打包时间<font color=red>优化比例可达70%以上</font></li>
 </ul>
-<h3 id="3、web-view不能设置cookie，不能设置header"><a href="#3、web-view不能设置cookie，不能设置header" class="headerlink" title="3、web-view不能设置cookie，不能设置header"></a>3、web-view不能设置cookie，不能设置header</h3><ul>
-<li>image不能直接展示请求接口的图片数据时，转而尝试使用web-view展示，继而碰到了新的问题</li>
-</ul>
-<ul>
-<li>在请求接口时候，后台做了一系列校验，其中token校验是获取的head内的token</li>
-<li>惊奇的发现，无法设置head，不同于iOS的request可以设置请求头，并且使用UIWebView展示，小程序无法设置，所以需要先暂时不校验token</li>
-<li></li>
+<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><ul>
+<li>软件层面优化比例：在单个项目上效果显著，多个项目同时出包的情况下，效果不理想，严重依赖于设备以及内存</li>
+<li>建议1: 单独开通wifi账号，解除网速限制，只提供打包机使用</li>
+<li>建议2: 升级设备<font color=red>(建议设备：MacMini Apple M1 芯片，配备 8 核中央处理器、8 核图形处理器和 16 核神经网络引擎、16GB 统一内存、1TB 固态硬盘)</font></li>
 </ul>
 
         
@@ -542,21 +646,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2019/10/30/%5BiOS%5D%E7%AC%94%E8%AE%B0/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2019/09/20/%5BiOS%E9%80%86%E5%90%91%5D%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%8A%A2%E7%BA%A2%E5%8C%85/" id="post_nav-older" class="next-content">
+        <a href="/2021/09/15/Dart%E8%AF%AD%E6%B3%95/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
